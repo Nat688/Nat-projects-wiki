@@ -52,6 +52,14 @@ a {
     width: calc(25% - 10px);
     height: auto;
 }
+.img_home {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(25% - 10px);
+    height: auto;
+}
 /* ===== ICON ===== */
 .icon {
     width: 20px;
