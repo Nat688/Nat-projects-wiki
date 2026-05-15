@@ -5,6 +5,9 @@ body {
     color: white;
     text-align: left;
 }
+.home {
+    position: relative;
+}
 /* ===== TEXT ===== */
 details > summary {
     text-align: center;
