@@ -112,16 +112,6 @@
     flex: 1;
 }
 
-/* ===== WIKI GROUP ===== */
-
-.wiki-group {
-    margin: 40px 0;
-}
-
-.wiki-group h3 {
-    color: var(--green);
-}
-
 /* ===== RECIPE GROUP ===== */
 
 .recipe-group {
@@ -182,10 +172,12 @@
 }
 
 .recipe-item img {
-	width: 100%;
+	width: 80%;
+	max-width: 300px;
 	display: block;
+	margin: 0 auto 15px;
 	border-radius: 12px;
-	margin-bottom: 15px;
+	image-rendering: pixelated;
 }
 
 .recipe-item h4 {
