@@ -1,157 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/nat.jpg">
+
     <title>Nat's Projects</title>
+
+    <link rel="icon" type="image/jpg" href="images/nat.jpg">
+
     <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/home.css">
 </head>
 
+
 <body>
-
-<header class="hero">
-    <h1>Nat's Projects</h1>
-    <p>Datapacks • Mods • Minecraft Creations</p>
-</header>
-
-<main>
-
-<section>
-    <h2>🚀 Recently Updated</h2>
-
-    <div class="projects">
-
-        <article class="card">
-            <img src="images/cookie-clicker.png" alt="">
-            <h3>Cookie Clicker <span class="soon">Soon</span></h3>
-
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <a class="logo" href="index.html">
+            Nat's Projects
+        </a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#projects">Projects</a>
+            <a href="#collections">Collections</a>
+            <a href="#">GitHub</a>
+        </nav>
+    </header>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>
+                Nat's Projects
+            </h1>
             <p>
-                Click to earn cookies, buy upgrades, unlock automation and
-                build your own cookie empire.
+                Minecraft Datapacks, Mods and Custom Creations
             </p>
-
-            <span class="version">1.21.9 - 26.1.x</span>
-
-            <a href="#">View Project</a>
-        </article>
-
-    </div>
-</section>
-
-<section>
-
-    <h2>⭐ Best Datapacks</h2>
-
-    <div class="projects">
-
-        <article class="card">
-            <img src="images/better-crafts.png" alt="">
-            <h3>Better Crafts</h3>
-
-            <p>
-                Improve Minecraft with dozens of quality-of-life crafting recipes.
-            </p>
-
-            <span class="version">1.21.11 - 26.1.x</span>
-
-            <a href="#">View Project</a>
-        </article>
-
-        <article class="card">
-            <img src="images/recycling.png" alt="">
-            <h3>Recycling <span class="soon">Soon</span></h3>
-
-            <p>
-                Recycle armor, tools and more into their original materials.
-            </p>
-
-            <span class="version">1.16.x - 26.1.x</span>
-
-            <a href="#">View Project</a>
-        </article>
-
-        <article class="card">
-            <img src="images/better-furnaces.png" alt="">
-            <h3>Better Furnaces</h3>
-
-            <p>
-                Upgrade furnaces with new features and improved gameplay.
-            </p>
-
-            <span class="version">1.21.11 - 26.1.x</span>
-
-            <a href="#">View Project</a>
-        </article>
-
-    </div>
-
-</section>
-
-<section>
-
-    <h2>🛡 Villager Healer Collection</h2>
-
-    <div class="projects">
-
-        <article class="card">
-            <img src="images/villager-heal-golem.png" alt="">
-            <h3>Villager Heal Golem</h3>
-
-            <p>
-                Villagers heal Iron Golems automatically to help protect villages.
-            </p>
-
-            <span class="version">1.21.9 - 26.1.x</span>
-
-            <a href="#">View Project</a>
-        </article>
-
-        <article class="card">
-            <img src="images/armorer-heal-golem.png" alt="">
-            <h3>Armorer Heal Golem</h3>
-
-            <p>
-                Armorers repair nearby Iron Golems to keep villages defended.
-            </p>
-
-            <span class="version">1.21.9 - 26.1.x</span>
-
-            <a href="#">View Project</a>
-        </article>
-
-    </div>
-
-</section>
-
-<section>
-
-    <h2>⚡ Others</h2>
-
-    <div class="projects">
-
-        <article class="card">
-            <img src="images/potent-sulfur-rework.png" alt="">
-            <h3>Potent Sulfur Rework</h3>
-
-            <p>
-                Break one Potent Sulfur block into nine Sulfur.
-            </p>
-
-            <span class="version">26.2 Snapshot 1+</span>
-
-            <a href="#">View Project</a>
-        </article>
-
-    </div>
-
-</section>
-
-</main>
-
-<footer>
-    <p>© 2026 Nat's Projects</p>
-</footer>
-
+            <div class="hero-buttons">
+                <a class="button" href="#projects">
+                    Browse Projects
+                </a>
+                <a class="button secondary" href="#">
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- PROJECTS -->
+    <main>
+        <section id="projects" class="section">
+            <h2 class="section-title">
+                🚀 Recently Updated
+            </h2>
+            <div class="cards">
+                <article class="card">
+                    <img src="images/cookie-clicker.png"
+                         alt="Cookie Clicker">
+                    <div class="card-content">
+                        <h3>
+                            Cookie Clicker
+                            <span class="badge soon">
+                                Soon
+                            </span>
+                        </h3>
+                        <p>
+                            Click to earn cookies, buy upgrades,
+                            unlock automation and build your own
+                            cookie empire.
+                        </p>
+                        <div class="badges">
+                            <span class="badge">
+                                Datapack
+                            </span>
+                            <span class="badge">
+                                1.21.9+
+                            </span>
+                        </div>
+                        <a class="card-button" href="#">
+                            View Project
+                        </a>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="images/better-crafts.png"
+                         alt="Better Crafts">
+                    <div class="card-content">
+                        <h3>
+                            Better Crafts
+                        </h3>
+                        <p>
+                            Improve Minecraft gameplay with
+                            new recipes and quality of life features.
+                        </p>
+                        <div class="badges">
+                            <span class="badge">
+                                Datapack
+                            </span>
+                            <span class="badge">
+                                1.21.11+
+                            </span>
+                        </div>
+                        <a class="card-button" href="#">
+                            View Project
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- COLLECTIONS -->
+        <section id="collections" class="section">
+            <h2 class="section-title">
+                ⭐ Collections
+            </h2>
+            <div class="cards">
+                <article class="card">
+                    <img src="images/villager-heal-golem.png"
+                         alt="Villager Healer">
+                    <div class="card-content">
+                        <h3>
+                            Villager Healer Collection
+                        </h3>
+                        <p>
+                            A collection of datapacks improving
+                            villagers and iron golems.
+                        </p>
+                        <a class="card-button" href="#">
+                            View Collection
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>
+            © 2026 Nat's Projects
+        </p>
+    </footer>
 </body>
 </html>
