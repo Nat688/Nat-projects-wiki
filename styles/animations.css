@@ -6,15 +6,30 @@
 /* ===== FADE ===== */
 
 .fade-in {
-    animation: fadeIn .8s ease forwards;
+    opacity: 0;
+}
+
+.fade-in.visible {
+    animation:
+        fadeIn .8s ease forwards;
 }
 
 .fade-up {
-    animation: fadeUp .8s ease forwards;
+    opacity: 0;
+}
+
+.fade-up.visible {
+    animation:
+        fadeUp .8s ease forwards;
 }
 
 .fade-down {
-    animation: fadeDown .8s ease forwards;
+    opacity: 0;
+}
+
+.fade-down.visible {
+    animation:
+        fadeDown .8s ease forwards;
 }
 
 @keyframes fadeIn {
