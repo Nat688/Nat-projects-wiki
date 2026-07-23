@@ -2,49 +2,6 @@
    NAT'S PROJECTS - HOME STYLE
    ===================================== */
 
-
-/* ===== NAVBAR ===== */
-
-.navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 18px 5%;
-    background: rgba(9,9,9,.75);
-    backdrop-filter: blur(15px);
-    border-bottom: 1px solid var(--border);
-}
-
-.logo {
-    font-size: 1.4rem;
-    font-weight: 800;
-    color: white;
-}
-
-.logo:hover {
-    color: var(--green);
-}
-
-.navbar nav {
-    display: flex;
-    gap: 30px;
-}
-
-.navbar nav a {
-    color: var(--text-secondary);
-    font-weight: 600;
-}
-
-.navbar nav a:hover {
-    color: var(--green);
-}
-
-
-
 /* ===== HERO ===== */
 
 .hero {
