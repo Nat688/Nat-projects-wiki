@@ -250,6 +250,31 @@
     margin-top: 15px;
 }
 
+/* ===== TAG ===== */
+
+.tag-new {
+	display: inline-block;
+	margin-left: 8px;
+	padding: 3px 8px;
+	border-radius: 8px;
+	background: linear-gradient(90deg,var(--green),var(--blue));
+	color: white;
+	font-size: .65rem;
+	font-weight: 700;
+	vertical-align: middle;
+	text-transform: uppercase;
+	animation: tag-pulse 2s infinite;
+}
+
+@keyframes tag-pulse {
+	0%,100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: .65;
+	}
+}
+
 /* ===== MOBILE ===== */
 
 @media(max-width:700px) {
