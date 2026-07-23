@@ -1,0 +1,242 @@
+/* =====================================
+   NAT'S PROJECTS - WIKI STYLE
+   ===================================== */
+
+
+/* ===== WIKI HEADER ===== */
+
+.wiki-header {
+    text-align: center;
+    padding: 80px 20px 50px;
+}
+
+.wiki-header h1 {
+    background: linear-gradient(
+        90deg,
+        var(--green),
+        var(--blue),
+        var(--purple)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 20px;
+}
+
+.wiki-header p {
+    max-width: 800px;
+    margin: auto;
+    font-size: 1.2rem;
+}
+
+/* ===== WIKI IMAGE ===== */
+
+.wiki-image {
+    width: min(900px, 90%);
+    margin: 40px auto;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.wiki-image img {
+    width: 100%;
+}
+
+/* ===== INFO BOX ===== */
+
+.info-box {
+    display: grid;
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(200px,1fr)
+        );
+    gap: 20px;
+    margin: 40px auto;
+    width: min(1000px,90%);
+}
+
+.info-item {
+    padding: 20px;
+    text-align: center;
+    background:
+        rgba(255,255,255,.05);
+    border:
+        1px solid var(--border);
+    border-radius:
+        var(--radius);
+}
+
+.info-item strong {
+    display: block;
+    margin-bottom: 8px;
+    color:
+        var(--green);
+}
+
+/* ===== WIKI CONTENT ===== */
+
+.wiki-content {
+    width:
+        min(1000px,90%);
+    margin:
+        auto;
+}
+
+.wiki-section {
+    margin:
+        70px 0;
+}
+
+.wiki-section h2 {
+    margin-bottom:
+        25px;
+    padding-bottom:
+        10px;
+    border-bottom:
+        1px solid var(--border);
+}
+
+.wiki-section h3 {
+    margin-top:
+        30px;
+    margin-bottom:
+        15px;
+}
+
+/* ===== FEATURE CARD ===== */
+
+.feature {
+    display:
+        flex;
+    align-items:
+        center;
+    gap:
+        30px;
+    padding:
+        25px;
+    margin:
+        25px 0;
+    background:
+        rgba(255,255,255,.04);
+    border:
+        1px solid var(--border);
+    border-radius:
+        var(--radius);
+    transition:
+        transform var(--transition);
+}
+
+.feature:hover {
+    transform:
+        translateY(-5px);
+}
+
+.feature img {
+    width:
+        150px;
+    border-radius:
+        12px;
+}
+
+.feature-content {
+    flex:1;
+}
+
+/* ===== RECIPE ===== */
+
+.recipe {
+    display:
+        flex;
+    justify-content:
+        center;
+    align-items:
+        center;
+    gap:
+        40px;
+    padding:
+        30px;
+    background:
+        rgba(255,255,255,.04);
+    border:
+        1px solid var(--border);
+    border-radius:
+        var(--radius);
+}
+
+.recipe img {
+    max-width:
+        250px;
+}
+
+/* ===== TABLE ===== */
+
+.wiki-table {
+    width:
+        100%;
+    border-collapse:
+        collapse;
+    overflow:
+        hidden;
+    border-radius:
+        var(--radius);
+}
+
+.wiki-table th {
+    background:
+        rgba(27,217,106,.2);
+}
+
+.wiki-table th,
+.wiki-table td {
+    padding:
+        15px;
+    text-align:
+        left;
+    border:
+        1px solid var(--border);
+}
+
+/* ===== FAQ ===== */
+
+.faq {
+    background:
+        rgba(255,255,255,.04);
+    border:
+        1px solid var(--border);
+    border-radius:
+        var(--radius);
+    padding:
+        20px;
+    margin:
+        15px 0;
+}
+
+.faq summary {
+    cursor:
+        pointer;
+    font-weight:
+        700;
+}
+
+.faq p {
+    margin-top:
+        15px;
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:700px) {
+    .feature {
+        flex-direction:
+            column;
+        text-align:
+            center;
+    }
+    .recipe {
+        flex-direction:
+            column;
+    }
+}
