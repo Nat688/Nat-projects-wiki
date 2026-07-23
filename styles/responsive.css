@@ -1,0 +1,86 @@
+/* =====================================
+   NAT'S PROJECTS - RESPONSIVE
+   ===================================== */
+
+
+/* ===== TABLET ===== */
+
+@media (max-width: 900px) {
+    .navbar {
+        padding: 18px 4%;
+    }
+    .navbar nav {
+        gap: 20px;
+    }
+    .hero {
+        min-height: 70vh;
+    }
+    .hero p {
+        font-size: 1.1rem;
+    }
+    .cards {
+        grid-template-columns: repeat(
+            auto-fit,
+            minmax(240px, 1fr)
+        );
+    }
+}
+
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 600px) {
+    body {
+        font-size: 95%;
+    }
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+
+        padding: 15px 20px;
+    }
+    .navbar nav {
+        flex-wrap: wrap;
+        justify-content: center;
+
+        gap: 15px;
+    }
+    .hero {
+        padding: 60px 20px;
+    }
+    .hero-buttons {
+        flex-direction: column;
+
+        width: 100%;
+    }
+    .button {
+        width: 100%;
+    }
+    .section {
+        margin: 70px auto;
+    }
+    .section-title {
+        margin-bottom: 35px;
+    }
+    .card img {
+        height: 180px;
+    }
+    .card-content {
+        padding: 20px;
+    }
+}
+
+
+/* ===== SMALL MOBILE ===== */
+
+@media (max-width: 400px) {
+    h1 {
+        font-size: 2.3rem;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+    .navbar nav a {
+        font-size: .9rem;
+    }
+}
