@@ -1,0 +1,162 @@
+/* =====================================
+   NAT'S PROJECTS - ANIMATIONS
+   ===================================== */
+
+
+/* ===== FADE ===== */
+
+.fade-in {
+    animation: fadeIn .8s ease forwards;
+}
+
+.fade-up {
+    animation: fadeUp .8s ease forwards;
+}
+
+.fade-down {
+    animation: fadeDown .8s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== DELAY ===== */
+
+.delay-1 {
+    animation-delay: .1s;
+}
+
+.delay-2 {
+    animation-delay: .2s;
+}
+
+.delay-3 {
+    animation-delay: .3s;
+}
+
+.delay-4 {
+    animation-delay: .4s;
+}
+
+/* ===== FLOAT ===== */
+
+.float {
+    animation:
+        float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* ===== GLOW ANIMATION ===== */
+
+.glow {
+    animation:
+        glow 3s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%,
+    100% {
+        filter:
+            drop-shadow(
+                0 0 0 rgba(27,217,106,0)
+            );
+    }
+    50% {
+        filter:
+            drop-shadow(
+                0 0 18px rgba(27,217,106,.35)
+            );
+    }
+}
+
+/* ===== HOVER EFFECTS ===== */
+
+.hover-up {
+    transition:
+        transform var(--transition);
+}
+
+.hover-up:hover {
+    transform:
+        translateY(-5px);
+}
+
+.hover-scale {
+    transition:
+        transform var(--transition);
+}
+
+.hover-scale:hover {
+    transform:
+        scale(1.03);
+}
+
+/* ===== PAGE LOAD ===== */
+
+.page-load {
+    animation:
+        pageLoad .6s ease;
+}
+
+@keyframes pageLoad {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== REDUCE MOTION ===== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration:
+            .01ms !important;
+        animation-iteration-count:
+            1 !important;
+        scroll-behavior:
+            auto !important;
+    }
+}
