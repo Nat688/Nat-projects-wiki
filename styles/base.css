@@ -5,68 +5,6 @@ body {
     color: white; 
     text-align: left; 
 }
-.home {
-    position: relative;
-}
-/* ===== TEXT ===== */
-details > summary {
-    text-align: center;
-    background-color: #1c1a1a;
-}
-h1 {
-    text-align: center;
-    font-family: "Papyrus";
-    font-size: 200%;
-}
-h2 { 
-    text-align: center;
-    font-size: 175%; 
-}
-h3 { 
-    text-align: center;
-    font-size: 150%; 
-}
-h4 { 
-    text-align: center;
-    font-size: 140%; 
-}
-h5 { 
-    text-align: center;
-    font-size: 125%; 
-}
-h6 { 
-    font-size: 110%; 
-}
-a {
-    text-decoration: none;
-    color: #1bd96a;
-}
-.center {
-    text-align: center;
-}
-/* ===== IMAGES ===== */
-.img_grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-}
-.img_deco {
-    width: calc(25% - 10px);
-    height: auto;
-}
-.img_home {
-    display: block;
-    margin: 0 auto;
-    width: calc(25% - 10px);
-    height: auto;
-}
-/* ===== ICON ===== */
-.icon {
-    width: 20px;
-    height: 20px;
-    transition: transform 0.3s ease;
-}
 /* ===== OTHERS ===== */
 .hero{
     text-align:center;
