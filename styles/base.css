@@ -38,13 +38,11 @@ body {
     min-height: 100vh;
     font-family: Inter, "Segoe UI", Arial, sans-serif;
     color: var(--text);
-
     background:
         radial-gradient(ellipse at 20% 20%, rgba(27,217,106,.15), transparent 45%),
         radial-gradient(ellipse at 80% 30%, rgba(59,130,246,.12), transparent 45%),
         radial-gradient(ellipse at 50% 80%, rgba(139,92,246,.12), transparent 50%),
         var(--background);
-
     background-attachment: fixed;
     overflow-x: hidden;
 }
@@ -79,7 +77,6 @@ p {
     line-height: 1.7;
 }
 
-
 /* ===== LINKS ===== */
 
 a {
@@ -92,22 +89,17 @@ a:hover {
     color: var(--green);
 }
 
-
 /* ===== BUTTON ===== */
 
 .button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     padding: 14px 28px;
     border-radius: 999px;
-
     background: var(--green);
     color: #000;
-
     font-weight: 700;
-
     transition:
         transform var(--transition),
         background var(--transition);
@@ -130,7 +122,6 @@ a:hover {
     color: white;
 }
 
-
 /* ===== STRUCTURE ===== */
 
 main {
@@ -147,14 +138,12 @@ main {
     margin-bottom: 50px;
 }
 
-
 /* ===== IMAGES ===== */
 
 img {
     max-width: 100%;
     display: block;
 }
-
 
 /* ===== FOOTER ===== */
 
