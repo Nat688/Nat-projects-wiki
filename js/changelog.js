@@ -2,6 +2,9 @@
 	"use strict";
 
 	const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+	const STATUS_VALUES = ["alpha", "beta", "release"];
+
+	const state = { list: null, filter: null, countEl: null, emptyEl: null, bound: false };
 
 	function localizeDates() {
 		document.querySelectorAll(".changelog-date").forEach(el => {
@@ -24,46 +27,62 @@
 		});
 	}
 
-	function setup() {
-		localizeDates();
-		const list = document.getElementById("changelog-list");
-		const filter = document.getElementById("changelog-filter");
-		const countEl = document.getElementById("changelog-count");
-		const emptyEl = document.getElementById("changelog-empty");
-		if (!list || !filter) return;
-		const entries = Array.from(list.querySelectorAll(".changelog-entry"));
+	function sortEntries() {
+		if (!state.list) return;
+		const entries = Array.from(state.list.querySelectorAll(".changelog-entry"));
 		entries.sort((a, b) => {
 			const da = a.querySelector("time")?.getAttribute("datetime") || "";
 			const db = b.querySelector("time")?.getAttribute("datetime") || "";
 			return db.localeCompare(da);
 		});
-		entries.forEach(entry => list.appendChild(entry));
-		const STATUS_VALUES = ["alpha", "beta", "release"];
-		function applyFilter() {
-			const value = filter.value;
-			let visible = 0;
-			entries.forEach(entry => {
-				const isBig = entry.dataset.big === "true";
-				const project = entry.dataset.project;
-				const status = entry.dataset.status;
-				let show;
-				if (value === "all") show = true;
-				else if (value === "big") show = isBig;
-				else if (STATUS_VALUES.includes(value)) show = status === value;
-				else show = project === value;
-				entry.classList.toggle("changelog-hidden", !show);
-				if (show) visible++;
-			});
-			if (countEl) {
-				countEl.textContent = visible + (visible === 1 ? " update" : " updates");
-			}
-			if (emptyEl) {
-				emptyEl.hidden = visible !== 0;
-			}
+		entries.forEach(entry => state.list.appendChild(entry));
+	}
+
+	function applyFilter() {
+		if (!state.list || !state.filter) return;
+		const value = state.filter.value;
+		let visible = 0;
+		state.list.querySelectorAll(".changelog-entry").forEach(entry => {
+			const isBig = entry.dataset.big === "true";
+			const project = entry.dataset.project;
+			const status = entry.dataset.status;
+			let show;
+			if (value === "all") show = true;
+			else if (value === "big") show = isBig;
+			else if (STATUS_VALUES.includes(value)) show = status === value;
+			else show = project === value;
+			entry.classList.toggle("changelog-hidden", !show);
+			if (show) visible++;
+		});
+		if (state.countEl) {
+			state.countEl.textContent = visible + (visible === 1 ? " update" : " updates");
 		}
-		filter.addEventListener("change", applyFilter);
+		if (state.emptyEl) {
+			state.emptyEl.hidden = visible !== 0;
+		}
+	}
+
+	function refresh() {
+		localizeDates();
+		sortEntries();
 		applyFilter();
 	}
+
+	function setup() {
+		state.list = document.getElementById("changelog-list");
+		state.filter = document.getElementById("changelog-filter");
+		state.countEl = document.getElementById("changelog-count");
+		state.emptyEl = document.getElementById("changelog-empty");
+		if (!state.list || !state.filter) return;
+		if (!state.bound) {
+			state.filter.addEventListener("change", applyFilter);
+			state.bound = true;
+		}
+		refresh();
+	}
+
+	window.ChangelogUI = { refresh };
+
 	if (document.readyState === "loading") {
 		document.addEventListener("DOMContentLoaded", setup);
 	} else {
