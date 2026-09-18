@@ -102,6 +102,15 @@
 	color: var(--text-secondary);
 }
 
+.changelog-entry code {
+	background: rgba(255,255,255,.08);
+	border: 1px solid var(--border);
+	border-radius: 4px;
+	padding: 1px 5px;
+	font-size: .85em;
+	font-family: Consolas, monospace;
+}
+
 .changelog-hidden {
 	display: none !important;
 }
