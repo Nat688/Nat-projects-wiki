@@ -3,9 +3,24 @@
 
 	const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 	const STATUS_VALUES = ["alpha", "beta", "release"];
+	const FILTER_STORAGE_KEY = "changelog-filter-value";
 
 	const state = { list: null, filter: null, countEl: null, emptyEl: null, bound: false };
 
+	function restoreFilter() {
+		if (!state.filter) return;
+		let stored;
+		try { stored = localStorage.getItem(FILTER_STORAGE_KEY); } catch (e) { return; }
+		if (!stored) return;
+		const optionExists = Array.from(state.filter.options).some(o => o.value === stored);
+		if (optionExists) state.filter.value = stored;
+	}
+
+	function saveFilter() {
+		if (!state.filter) return;
+		try { localStorage.setItem(FILTER_STORAGE_KEY, state.filter.value); } catch (e) {}
+	}
+	
 	function localizeDates() {
 		document.querySelectorAll(".changelog-date").forEach(el => {
 			const iso = el.getAttribute("datetime");
@@ -65,6 +80,12 @@
 	function refresh() {
 		localizeDates();
 		sortEntries();
+		restoreFilter();
+		applyFilter();
+	}
+
+	function onFilterChange() {
+		saveFilter();
 		applyFilter();
 	}
 
@@ -75,7 +96,7 @@
 		state.emptyEl = document.getElementById("changelog-empty");
 		if (!state.list || !state.filter) return;
 		if (!state.bound) {
-			state.filter.addEventListener("change", applyFilter);
+			state.filter.addEventListener("change", onFilterChange);
 			state.bound = true;
 		}
 		refresh();
