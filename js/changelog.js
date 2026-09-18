@@ -18,9 +18,9 @@
 
 	function saveFilter() {
 		if (!state.filter) return;
-		try { localStorage.setItem(FILTER_STORAGE_KEY, state.filter.value); } catch (e) {}
+		try { localStorage.setItem(FILTER_STORAGE_KEY, state.filter.value); } catch (e) { /* ignore */ }
 	}
-	
+
 	function localizeDates() {
 		document.querySelectorAll(".changelog-date").forEach(el => {
 			const iso = el.getAttribute("datetime");
