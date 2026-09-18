@@ -2,8 +2,6 @@
 	"use strict";
 
 	const API_BASE = "https://api.modrinth.com/v2/project/";
-	const VERSION_HEADING = "🛠️new version(s)";
-	const CHANGELOG_HEADING = "📝changelog";
 
 	function escapeHtml(str) {
 		return String(str)
@@ -11,6 +9,18 @@
 			.replace(/</g, "&lt;")
 			.replace(/>/g, "&gt;")
 			.replace(/"/g, "&quot;");
+	}
+
+	function renderChangelog(raw) {
+		const lines = raw.replace(/\r\n/g, "\n").split("\n");
+		const htmlParts = [];
+		let listOpen = false;
+		function closeList() { ... }
+		function inline(text) { ... }
+		lines.forEach(line => {
+		});
+		closeList();
+		return htmlParts.join("");
 	}
 
 	function existingVersionNumbers(list, projectId) {
@@ -44,20 +54,15 @@
 		article.dataset.status = statusOf(version);
 		article.dataset.big = "false";
 
-		const gameVersions = Array.isArray(version.game_versions) && version.game_versions.length
-			? version.game_versions.join(", ")
-			: "";
 		const changelogText = (version.changelog || "").trim();
 
 		article.innerHTML = `
 			<div class="changelog-meta">
 				<time class="changelog-date" datetime="${escapeHtml(version.date_published || "")}"></time>
 				<span class="badge">${escapeHtml(source.badge)}</span>
-				<span class="tag-auto" title="Récupéré automatiquement depuis Modrinth">Modrinth</span>
 			</div>
 			<h3>v${escapeHtml(version.version_number)}</h3>
-			${gameVersions ? `<h4>${VERSION_HEADING}</h4><ul><li><b>${escapeHtml(gameVersions)}</b></li></ul>` : ""}
-			${changelogText ? `<h4>${CHANGELOG_HEADING}</h4><p>${escapeHtml(changelogText).replace(/\n/g, "<br>")}</p>` : ""}
+			${changelogText ? renderChangelog(changelogText) : ""}
 		`;
 		return article;
 	}
