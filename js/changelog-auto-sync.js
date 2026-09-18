@@ -14,13 +14,24 @@
 	function renderChangelog(raw) {
 		const lines = raw.replace(/\r\n/g, "\n").split("\n");
 		const htmlParts = [];
-		let listOpen = false;
+		const listStack = [];
 
-		function closeList() {
-			if (listOpen) {
-				htmlParts.push("</ul>");
-				listOpen = false;
+		function closeDeeperThan(indent) {
+			while (listStack.length && listStack[listStack.length - 1].indent > indent) {
+				const level = listStack.pop();
+				const ulHtml = `<ul>${level.items.join("")}</ul>`;
+				const parent = listStack[listStack.length - 1];
+				if (parent) {
+					const lastIdx = parent.items.length - 1;
+					parent.items[lastIdx] = parent.items[lastIdx].replace(/<\/li>$/, `${ulHtml}</li>`);
+				} else {
+					htmlParts.push(ulHtml);
+				}
 			}
+		}
+
+		function closeAllLists() {
+			closeDeeperThan(-1);
 		}
 
 		function inline(text) {
@@ -33,33 +44,45 @@
 
 		lines.forEach(line => {
 			const trimmed = line.trim();
-			if (!trimmed) { closeList(); return; }
+			if (!trimmed) { closeAllLists(); return; }
 
 			const heading = trimmed.match(/^#{1,6}\s+(.*)$/);
 			if (heading) {
-				closeList();
+				closeAllLists();
 				htmlParts.push(`<p><b>${inline(heading[1])}</b></p>`);
 				return;
 			}
 
-			const bullet = trimmed.match(/^[-*]\s+(.*)$/);
-			if (bullet) {
-				if (!listOpen) { htmlParts.push("<ul>"); listOpen = true; }
-				htmlParts.push(`<li>${inline(bullet[1])}</li>`);
+			const bulletMatch = line.match(/^(\s*)[-*+]\s+(.*)$/);
+			if (bulletMatch) {
+				const indent = bulletMatch[1].replace(/\t/g, "    ").length;
+				const content = bulletMatch[2];
+				closeDeeperThan(indent);
+				let top = listStack[listStack.length - 1];
+				if (!top || top.indent < indent) {
+					top = { indent, items: [] };
+					listStack.push(top);
+				}
+				top.items.push(`<li>${inline(content)}</li>`);
 				return;
 			}
 
-			closeList();
+			closeAllLists();
 			htmlParts.push(`<p>${inline(trimmed)}</p>`);
 		});
-		closeList();
+		closeAllLists();
 		return htmlParts.join("");
 	}
 
 	function existingVersionNumbers(list, projectId) {
 		const known = new Set();
-		list.querySelectorAll(`.changelog-entry[data-project="${projectId}"] h3`).forEach(h3 => {
-			known.add(h3.textContent.trim().replace(/^v/i, ""));
+		list.querySelectorAll(`.changelog-entry[data-project="${projectId}"]`).forEach(entry => {
+			if (entry.dataset.version) {
+				known.add(entry.dataset.version);
+				return;
+			}
+			const h3 = entry.querySelector("h3");
+			if (h3) known.add(h3.textContent.trim().replace(/^v/i, ""));
 		});
 		return known;
 	}
@@ -80,6 +103,10 @@
 		return ["release", "beta", "alpha"].includes(version.version_type) ? version.version_type : "release";
 	}
 
+	function displayVersion(versionNumber) {
+		return String(versionNumber).replace(/\+.*$/, "");
+	}
+
 	function isBig(source, version) {
 		const list = (window.CHANGELOG_BIG_VERSIONS && window.CHANGELOG_BIG_VERSIONS[source.id]) || [];
 		return list.includes(version.version_number);
@@ -90,10 +117,11 @@
 		article.className = "changelog-entry";
 		article.dataset.project = source.id;
 		article.dataset.status = statusOf(version);
-		article.dataset.big = isBig(source, version) ? "true" : "false";
+		const big = isBig(source, version);
+		article.dataset.big = big ? "true" : "false";
+		article.dataset.version = version.version_number;
 
 		const changelogText = (version.changelog || "").trim();
-		const big = isBig(source, version);
 
 		article.innerHTML = `
 			<div class="changelog-meta">
@@ -101,7 +129,7 @@
 				<span class="badge">${escapeHtml(source.badge)}</span>
 				${big ? `<span class="tag-new">Big Update</span>` : ""}
 			</div>
-			<h3>v${escapeHtml(version.version_number)}</h3>
+			<h3>v${escapeHtml(displayVersion(version.version_number))}</h3>
 			${changelogText ? renderChangelog(changelogText) : ""}
 		`;
 		return article;
