@@ -93,13 +93,20 @@
 
 .changelog-entry ul {
 	padding-left: 20px;
-	display: flex;
-	flex-direction: column;
-	gap: 6px;
+	margin: 8px 0;
+}
+
+.changelog-entry ul ul {
+	margin: 6px 0 0;
 }
 
 .changelog-entry li {
 	color: var(--text-secondary);
+	margin-bottom: 6px;
+}
+
+.changelog-entry li:last-child {
+	margin-bottom: 0;
 }
 
 .changelog-entry code {
