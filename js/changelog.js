@@ -18,7 +18,7 @@
 
 	function saveFilter() {
 		if (!state.filter) return;
-		try { localStorage.setItem(FILTER_STORAGE_KEY, state.filter.value); } catch (e) { /* ignore */ }
+		try { localStorage.setItem(FILTER_STORAGE_KEY, state.filter.value); } catch (e) {}
 	}
 
 	function localizeDates() {
