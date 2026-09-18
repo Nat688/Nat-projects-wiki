@@ -93,11 +93,13 @@
 		article.dataset.big = isBig(source, version) ? "true" : "false";
 
 		const changelogText = (version.changelog || "").trim();
+		const big = isBig(source, version);
 
 		article.innerHTML = `
 			<div class="changelog-meta">
 				<time class="changelog-date" datetime="${escapeHtml(version.date_published || "")}"></time>
 				<span class="badge">${escapeHtml(source.badge)}</span>
+				${big ? `<span class="tag-new">Big Update</span>` : ""}
 			</div>
 			<h3>v${escapeHtml(version.version_number)}</h3>
 			${changelogText ? renderChangelog(changelogText) : ""}
