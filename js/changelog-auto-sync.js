@@ -117,6 +117,9 @@
 		}
 		if (!Array.isArray(versions) || versions.length === 0) return 0;
 
+		versions = versions.filter(v => Array.isArray(v.loaders) && v.loaders.some(l => String(l).toLowerCase() === "datapack"));
+		if (versions.length === 0) return 0;
+
 		const known = existingVersionNumbers(list, source.id);
 		let added = 0;
 		versions.forEach(version => {
