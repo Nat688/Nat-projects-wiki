@@ -15,9 +15,41 @@
 		const lines = raw.replace(/\r\n/g, "\n").split("\n");
 		const htmlParts = [];
 		let listOpen = false;
-		function closeList() { ... }
-		function inline(text) { ... }
+
+		function closeList() {
+			if (listOpen) {
+				htmlParts.push("</ul>");
+				listOpen = false;
+			}
+		}
+
+		function inline(text) {
+			return escapeHtml(text)
+				.replace(/\*\*(.+?)\*\*/g, "<b>$1</b>")
+				.replace(/__(.+?)__/g, "<b>$1</b>")
+				.replace(/(?:^|[^*])\*([^*]+)\*(?!\*)/g, (m, p1) => m.replace(`*${p1}*`, `<i>${p1}</i>`));
+		}
+
 		lines.forEach(line => {
+			const trimmed = line.trim();
+			if (!trimmed) { closeList(); return; }
+
+			const heading = trimmed.match(/^#{1,6}\s+(.*)$/);
+			if (heading) {
+				closeList();
+				htmlParts.push(`<p><b>${inline(heading[1])}</b></p>`);
+				return;
+			}
+
+			const bullet = trimmed.match(/^[-*]\s+(.*)$/);
+			if (bullet) {
+				if (!listOpen) { htmlParts.push("<ul>"); listOpen = true; }
+				htmlParts.push(`<li>${inline(bullet[1])}</li>`);
+				return;
+			}
+
+			closeList();
+			htmlParts.push(`<p>${inline(trimmed)}</p>`);
 		});
 		closeList();
 		return htmlParts.join("");
@@ -47,12 +79,17 @@
 		return ["release", "beta", "alpha"].includes(version.version_type) ? version.version_type : "release";
 	}
 
+	function isBig(source, version) {
+		const list = (window.CHANGELOG_BIG_VERSIONS && window.CHANGELOG_BIG_VERSIONS[source.id]) || [];
+		return list.includes(version.version_number);
+	}
+
 	function buildEntry(source, version) {
 		const article = document.createElement("article");
 		article.className = "changelog-entry";
 		article.dataset.project = source.id;
 		article.dataset.status = statusOf(version);
-		article.dataset.big = "false";
+		article.dataset.big = isBig(source, version) ? "true" : "false";
 
 		const changelogText = (version.changelog || "").trim();
 
