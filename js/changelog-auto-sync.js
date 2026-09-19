@@ -38,6 +38,7 @@
 			return escapeHtml(text)
 				.replace(/\*\*(.+?)\*\*/g, "<b>$1</b>")
 				.replace(/__(.+?)__/g, "<b>$1</b>")
+				.replace(/``(.+?)``/g, "<code>$1</code>")
 				.replace(/`([^`]+?)`/g, "<code>$1</code>")
 				.replace(/(?:^|[^*])\*([^*]+)\*(?!\*)/g, (m, p1) => m.replace(`*${p1}*`, `<i>${p1}</i>`));
 		}
