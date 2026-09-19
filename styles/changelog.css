@@ -109,6 +109,15 @@
 	margin-bottom: 0;
 }
 
+.changelog-entry ol {
+	padding-left: 26px;
+	margin: 10px 0;
+}
+
+.changelog-entry ol li {
+	margin-bottom: 8px;
+}
+
 .changelog-entry code {
 	background: rgba(255,255,255,.08);
 	border: 1px solid var(--border);
