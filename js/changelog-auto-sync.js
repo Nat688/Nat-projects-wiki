@@ -138,7 +138,7 @@
 	async function syncSource(list, source) {
 		let versions;
 		try {
-			const res = await fetch(`${API_BASE}${encodeURIComponent(source.slug)}/version`);
+			const res = await fetch(`${API_BASE}${encodeURIComponent(source.slug)}/version`, { cache: "no-store" });
 			if (!res.ok) throw new Error(`HTTP ${res.status}`);
 			versions = await res.json();
 		} catch (err) {
