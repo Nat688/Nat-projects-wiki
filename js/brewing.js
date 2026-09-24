@@ -19,8 +19,6 @@
 		wither: "#2b2b2b",
 	};
 
-
-
 	function applyPotionColors(root) {
 		root.querySelectorAll("bb-potion[data-effect]").forEach((el) => {
 			const color = POTION_COLORS[el.dataset.effect];
