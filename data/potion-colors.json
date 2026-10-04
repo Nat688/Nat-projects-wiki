@@ -1,0 +1,65 @@
+{
+  "_comment": "Potion colours, copied as-is from Better Brewing's own recipe JSON (minecraft:potion_contents.custom_color). brewing.js fetches this file and applies each hex value to the matching bb-potion element.",
+  "colors": {
+    "absorption": {
+      "custom_color_int": 16763955,
+      "hex": "#ffcc33"
+    },
+    "blindness": {
+      "custom_color_int": 1776411,
+      "hex": "#1b1b1b"
+    },
+    "conduit_power": {
+      "custom_color_int": 1878473,
+      "hex": "#1ca9c9"
+    },
+    "darkness": {
+      "custom_color_int": 805450,
+      "hex": "#0c4a4a"
+    },
+    "glowing": {
+      "custom_color_int": 16773494,
+      "hex": "#fff176"
+    },
+    "haste": {
+      "custom_color_int": 16766720,
+      "hex": "#ffd700"
+    },
+    "hero_of_the_village": {
+      "custom_color_int": 1560170,
+      "hex": "#17ce6a"
+    },
+    "hunger": {
+      "custom_color_int": 7029286,
+      "hex": "#6b4226"
+    },
+    "levitation": {
+      "custom_color_int": 11033793,
+      "hex": "#a85cc1"
+    },
+    "luck": {
+      "custom_color_int": 16755200,
+      "hex": "#ffaa00"
+    },
+    "mining_fatigue": {
+      "custom_color_int": 1990495,
+      "hex": "#1e5f5f"
+    },
+    "nausea": {
+      "custom_color_int": 9083483,
+      "hex": "#8a9a5b"
+    },
+    "resistance": {
+      "custom_color_int": 7372944,
+      "hex": "#708090"
+    },
+    "saturation": {
+      "custom_color_int": 13012503,
+      "hex": "#c68e17"
+    },
+    "wither": {
+      "custom_color_int": 2829099,
+      "hex": "#2b2b2b"
+    }
+  }
+}
