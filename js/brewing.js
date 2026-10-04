@@ -19,18 +19,31 @@
 		wither: "#2b2b2b",
 	};
 
-	function applyPotionColors(root) {
+
+
+	function applyPotionColors(root, colors) {
 		root.querySelectorAll("bb-potion[data-effect]").forEach((el) => {
-			const color = POTION_COLORS[el.dataset.effect];
+			const color = colors[el.dataset.effect];
 			if (color) el.style.setProperty("--potion-color", color);
 		});
+	}
+
+	function loadPotionColors(root) {
+		fetch("../data/potion-colors.json")
+			.then((r) => r.json())
+			.then((data) => {
+				const colors = {};
+				for (const [effect, info] of Object.entries(data.colors || {})) colors[effect] = info.hex;
+				applyPotionColors(root, colors);
+			})
+			.catch(() => applyPotionColors(root, POTION_COLORS));
 	}
 
 	function setup() {
 		const root = document.getElementById("bb-recipes-root");
 		if (!root) return;
 
-		applyPotionColors(root);
+		loadPotionColors(root);
 
 		const expandBtn = document.getElementById("bb-expand-all");
 		const collapseBtn = document.getElementById("bb-collapse-all");
