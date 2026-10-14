@@ -4,7 +4,6 @@
 	gap: 18px;
 	padding: 25px;
 }
-
 bf-recipe {
 	background: rgba(255,255,255,.04);
 	border: 1px solid var(--border);
@@ -16,12 +15,10 @@ bf-recipe {
 	gap: 8px;
 	transition: transform var(--transition), background var(--transition);
 }
-
 bf-recipe:hover {
 	transform: translateY(-4px);
 	background: rgba(255,255,255,.08);
 }
-
 bf-smelt {
 	position: relative;
 	display: grid;
@@ -29,7 +26,6 @@ bf-smelt {
 	gap: 34px;
 	flex-shrink: 0;
 }
-
 bf-smelt img {
 	width: 34px;
 	height: 34px;
@@ -41,11 +37,9 @@ bf-smelt img {
 	object-fit: contain;
 	image-rendering: pixelated;
 }
-
 bf-smelt img:not([src]) {
 	box-shadow: none;
 }
-
 bf-smelt::before {
 	content: "";
 	position: absolute;
@@ -421,7 +415,6 @@ bf-smelt::before {
 		13.5px 14.0px 0 0 currentColor,
 		14.5px 14.0px 0 0 currentColor;
 }
-
 bf-smelt::after {
 	content: "\25B6";
 	position: absolute;
@@ -431,7 +424,6 @@ bf-smelt::after {
 	color: var(--text-secondary);
 	font-size: 1.3rem;
 }
-
 bf-result {
 	position: relative;
 	display: flex;
@@ -447,14 +439,12 @@ bf-result {
 		inset -2px -2px 0 rgba(255,255,255,.12);
 	flex-shrink: 0;
 }
-
 bf-result img {
 	width: 30px;
 	height: 30px;
 	object-fit: contain;
 	image-rendering: pixelated;
 }
-
 bf-result[count]::after {
 	content: "x" attr(count);
 	position: absolute;
@@ -468,13 +458,11 @@ bf-result[count]::after {
 	border-radius: 6px;
 	border: 1px solid rgba(255,255,255,.2);
 }
-
 @media (max-width: 700px) {
 	.bf-recipe-list {
 		grid-template-columns: 1fr;
 	}
 }
-
 .bf-toolbar {
 	display: flex;
 	align-items: center;
@@ -483,12 +471,10 @@ bf-result[count]::after {
 	flex-wrap: wrap;
 	margin-bottom: 25px;
 }
-
 .bf-toolbar-buttons {
 	display: flex;
 	gap: 10px;
 }
-
 .bf-toolbar-buttons button {
 	padding: 10px 16px;
 	border-radius: 10px;
@@ -499,13 +485,11 @@ bf-result[count]::after {
 	font-size: .85rem;
 	transition: background var(--transition), color var(--transition), border-color var(--transition);
 }
-
 .bf-toolbar-buttons button:hover {
 	background: rgba(255,255,255,.09);
 	color: var(--text);
 	border-color: rgba(27,217,106,.4);
 }
-
 .bf-count {
 	margin-left: 10px;
 	font-size: .75rem;
