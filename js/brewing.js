@@ -1,6 +1,5 @@
 (() => {
 	"use strict";
-
 	const POTION_COLORS = {
 		absorption: "#ffcc33",
 		blindness: "#1b1b1b",
@@ -18,14 +17,12 @@
 		saturation: "#c68e17",
 		wither: "#2b2b2b",
 	};
-
 	function applyPotionColors(root, colors) {
 		root.querySelectorAll("bb-potion[data-effect]").forEach((el) => {
 			const color = colors[el.dataset.effect];
 			if (color) el.style.setProperty("--potion-color", color);
 		});
 	}
-
 	function loadPotionColors(root) {
 		fetch("../data/potion-colors.json")
 			.then((r) => r.json())
@@ -36,7 +33,6 @@
 			})
 			.catch(() => applyPotionColors(root, POTION_COLORS));
 	}
-
 	function setup() {
 		const root = document.getElementById("bb-recipes-root");
 		if (!root) return;
@@ -57,7 +53,6 @@
 			});
 		}
 	}
-
 	if (document.readyState === "loading") {
 		document.addEventListener("DOMContentLoaded", setup);
 	} else {
