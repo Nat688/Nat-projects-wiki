@@ -1,13 +1,10 @@
 (() => {
 	"use strict";
-
 	function setup() {
 		const root = document.getElementById("bf-recipes-root");
 		if (!root) return;
-
 		const expandBtn = document.getElementById("bf-expand-all");
 		const collapseBtn = document.getElementById("bf-collapse-all");
-
 		if (expandBtn) {
 			expandBtn.addEventListener("click", () => {
 				root.querySelectorAll(".recipe-group").forEach(g => { g.open = true; });
@@ -19,7 +16,6 @@
 			});
 		}
 	}
-
 	if (document.readyState === "loading") {
 		document.addEventListener("DOMContentLoaded", setup);
 	} else {

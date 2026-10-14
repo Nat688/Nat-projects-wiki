@@ -6,12 +6,10 @@
 	gap: 15px;
 	margin-bottom: 30px;
 }
-
 .changelog-count {
 	color: var(--text-secondary);
 	font-size: .9rem;
 }
-
 #changelog-filter {
 	padding: 10px 16px;
 	border-radius: 10px;
@@ -23,30 +21,25 @@
 	cursor: pointer;
 	transition: border-color var(--transition), background var(--transition);
 }
-
 #changelog-filter:hover {
 	border-color: rgba(27,217,106,.4);
 	background: rgba(255,255,255,.05);
 }
-
 #changelog-filter optgroup {
 	background: var(--surface);
 	color: var(--text-secondary);
 	font-style: normal;
 	font-weight: 700;
 }
-
 #changelog-filter option {
 	background: var(--surface);
 	color: var(--text);
 }
-
 #changelog-list {
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
 }
-
 .changelog-entry {
 	background: rgba(255,255,255,.04);
 	border: 1px solid var(--border);
@@ -55,24 +48,19 @@
 	padding: 22px 25px;
 	transition: transform var(--transition), background var(--transition), border-color var(--transition);
 }
-
 .changelog-entry:hover {
 	transform: translateY(-4px);
 	background: rgba(255,255,255,.07);
 }
-
 .changelog-entry[data-status="alpha"] {
 	border-left-color: #ff496e;
 }
-
 .changelog-entry[data-status="beta"] {
 	border-left-color: #ffa347;
 }
-
 .changelog-entry[data-status="release"] {
 	border-left-color: var(--green);
 }
-
 .changelog-meta {
 	display: flex;
 	align-items: center;
@@ -80,44 +68,35 @@
 	gap: 10px;
 	margin-bottom: 12px;
 }
-
 .changelog-date {
 	color: var(--text-secondary);
 	font-size: .8rem;
 	font-family: Consolas, monospace;
 }
-
 .changelog-entry h3 {
 	margin: 4px 0 12px;
 }
-
 .changelog-entry ul {
 	padding-left: 20px;
 	margin: 8px 0;
 }
-
 .changelog-entry ul ul {
 	margin: 6px 0 0;
 }
-
 .changelog-entry li {
 	color: var(--text-secondary);
 	margin-bottom: 6px;
 }
-
 .changelog-entry li:last-child {
 	margin-bottom: 0;
 }
-
 .changelog-entry ol {
 	padding-left: 26px;
 	margin: 10px 0;
 }
-
 .changelog-entry ol li {
 	margin-bottom: 8px;
 }
-
 .changelog-entry code {
 	background: rgba(255,255,255,.08);
 	border: 1px solid var(--border);
@@ -126,17 +105,14 @@
 	font-size: .85em;
 	font-family: Consolas, monospace;
 }
-
 .changelog-hidden {
 	display: none !important;
 }
-
 .changelog-empty {
 	text-align: center;
 	color: var(--text-secondary);
 	padding: 50px 20px;
 }
-
 @media (max-width: 700px) {
 	.changelog-toolbar {
 		flex-direction: column;

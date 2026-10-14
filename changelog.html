@@ -1,83 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Changelog | Nat's Projects</title>
-	<link rel="icon" type="image/jpg" href="images/nat.jpg">
-	<link rel="stylesheet" href="styles/base.css">
-	<link rel="stylesheet" href="styles/theme.css">
-	<link rel="stylesheet" href="styles/navbar.css">
-	<link rel="stylesheet" href="styles/cards.css">
-	<link rel="stylesheet" href="styles/animations.css">
-	<link rel="stylesheet" href="styles/responsive.css">
-	<link rel="stylesheet" href="styles/wiki.css">
-	<link rel="stylesheet" href="styles/changelog.css">
-</head>
-<body class="page-load">
-	<header class="navbar">
-		<a class="logo" href="index.html">Nat's Projects</a>
-		<nav>
-			<a href="index.html">Home</a>
-			<a href="index.html#projects">Projects</a>
-			<a href="changelog.html">Changelog</a>
-			<a href="https://realisticnode.com/nat68" target="_blank">Server</a>
-			<a href="https://github.com/Nat688/Nat-Projects/issues" target="_blank">Report issues</a>
-		</nav>
-	</header>
-
-	<main>
-		<section class="wiki-header fade-up">
-			<h1>Changelog</h1>
-			<p>Every update, across every project, in one place.</p>
-		</section>
-
-		<div class="wiki-content">
-			<section class="wiki-section">
-				<div class="changelog-toolbar">
-					<p class="changelog-count" id="changelog-count"></p>
-					<select id="changelog-filter">
-						<option value="all">All updates</option>
-						<option value="big">⭐ Big updates</option>
-						<optgroup label="Status">
-							<option value="release">🟢 Release</option>
-							<option value="beta">🟠 Beta</option>
-							<option value="alpha">🔴 Alpha</option>
-						</optgroup>
-						<optgroup label="Project">
-							<option value="coals-to-gunpowder">Coals to Gunpowder</option>
-							<option value="villagers-tasks">Villagers Tasks</option>
-							<option value="speed-paths">Speed Paths</option>
-							<option value="lava-source">Lava Source</option>
-							<option value="recycling">Recycling</option>
-							<option value="better-brewings">Better Brewings</option>
-							<option value="better-crafts">Better Crafts</option>
-							<option value="better-furnaces">Better Furnaces</option>
-							<option value="villager-heal-golem">Villager Heal Golem</option>
-							<option value="armorer-heal-golem">Armorer Heal Golem</option>
-							<option value="cookie-clicker">Cookie Clicker</option>
-						</optgroup>
-					</select>
-				</div>
-
-				<div id="changelog-list">
-					
-				</div>
-				<p class="changelog-empty" id="changelog-empty" hidden>No updates for this filter yet.</p>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Changelog | Nat's Projects</title>
+		<link rel="icon" type="image/jpg" href="images/nat.jpg">
+		<link rel="stylesheet" href="styles/base.css">
+		<link rel="stylesheet" href="styles/theme.css">
+		<link rel="stylesheet" href="styles/navbar.css">
+		<link rel="stylesheet" href="styles/cards.css">
+		<link rel="stylesheet" href="styles/animations.css">
+		<link rel="stylesheet" href="styles/responsive.css">
+		<link rel="stylesheet" href="styles/wiki.css">
+		<link rel="stylesheet" href="styles/changelog.css">
+	</head>
+	<body class="page-load">
+		<header class="navbar">
+			<a class="logo" href="index.html">Nat's Projects</a>
+			<nav>
+				<a href="index.html">Home</a>
+				<a href="index.html#projects">Projects</a>
+				<a href="changelog.html">Changelog</a>
+				<a href="https://realisticnode.com/nat68" target="_blank">Server</a>
+				<a href="https://github.com/Nat688/Nat-Projects/issues" target="_blank">Report issues</a>
+			</nav>
+		</header>
+		<main>
+			<section class="wiki-header fade-up">
+				<h1>Changelog</h1>
+				<p>Every update, across every project, in one place.</p>
 			</section>
-		</div>
-	</main>
-
-	<footer>
-		<p>© 2026 Nat's Projects</p>
-	</footer>
-
-	<script src="js/animations.js"></script>
-	<script src="js/wiki.js"></script>
-	<script src="js/changelog.js"></script>
-	<script src="js/changelog-sources.js"></script>
-	<script src="js/changelog-big.js"></script>
-	<script src="js/changelog-auto-sync.js"></script>
-
-</body>
+			<div class="wiki-content">
+				<section class="wiki-section">
+					<div class="changelog-toolbar">
+						<p class="changelog-count" id="changelog-count"></p>
+						<select id="changelog-filter">
+							<option value="all">All updates</option>
+							<option value="big">⭐ Big updates</option>
+							<optgroup label="Status">
+								<option value="release">🟢 Release</option>
+								<option value="beta">🟠 Beta</option>
+								<option value="alpha">🔴 Alpha</option>
+							</optgroup>
+							<optgroup label="Project">
+								<option value="coals-to-gunpowder">Coals to Gunpowder</option>
+								<option value="villagers-tasks">Villagers Tasks</option>
+								<option value="speed-paths">Speed Paths</option>
+								<option value="lava-source">Lava Source</option>
+								<option value="recycling">Recycling</option>
+								<option value="better-brewings">Better Brewings</option>
+								<option value="better-crafts">Better Crafts</option>
+								<option value="better-furnaces">Better Furnaces</option>
+								<option value="villager-heal-golem">Villager Heal Golem</option>
+								<option value="armorer-heal-golem">Armorer Heal Golem</option>
+								<option value="cookie-clicker">Cookie Clicker</option>
+							</optgroup>
+						</select>
+					</div>
+					<div id="changelog-list">
+					</div>
+					<p class="changelog-empty" id="changelog-empty" hidden>No updates for this filter yet.</p>
+				</section>
+			</div>
+		</main>
+		<footer>
+			<p>© 2026 Nat's Projects</p>
+		</footer>
+		<script src="js/animations.js"></script>
+		<script src="js/wiki.js"></script>
+		<script src="js/changelog.js"></script>
+		<script src="js/changelog-sources.js"></script>
+		<script src="js/changelog-big.js"></script>
+		<script src="js/changelog-auto-sync.js"></script>
+	</body>
 </html>

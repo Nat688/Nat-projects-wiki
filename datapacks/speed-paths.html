@@ -1,243 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Speed Paths | Nat's Projects</title>
-	<link rel="icon" type="image/png" href="../images/speed-paths.png">
-	<link rel="stylesheet" href="../styles/base.css">
-	<link rel="stylesheet" href="../styles/theme.css">
-	<link rel="stylesheet" href="../styles/navbar.css">
-	<link rel="stylesheet" href="../styles/cards.css">
-	<link rel="stylesheet" href="../styles/animations.css">
-	<link rel="stylesheet" href="../styles/responsive.css">
-	<link rel="stylesheet" href="../styles/wiki.css">
-</head>
-<body class="page-load">
-	<header class="navbar">
-		<a class="logo" href="../index.html">Nat's Projects</a>
-		<nav>
-			<a href="../index.html">Home</a>
-			<a href="../index.html#projects">Projects</a>
-			<a href="../changelog.html">Changelog</a>
-			<a href="https://realisticnode.com/nat68" target="_blank">Server</a>
-			<a href="https://github.com/Nat688/Nat-Projects/issues" target="_blank">Report issues</a>
-		</nav>
-	</header>
-
-	<main>
-		<section class="wiki-header fade-up">
-			<h1>Speed Paths</h1>
-			<p>Gain a configurable Speed effect while walking on Dirt Paths, making roads faster and more rewarding to build.</p>
-		</section>
-		
-		<section class="info-box fade-up">
-			<div class="info-item">
-				<strong>Type</strong>
-				Datapack / Mod
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Speed Paths | Nat's Projects</title>
+		<link rel="icon" type="image/png" href="../images/speed-paths.png">
+		<link rel="stylesheet" href="../styles/base.css">
+		<link rel="stylesheet" href="../styles/theme.css">
+		<link rel="stylesheet" href="../styles/navbar.css">
+		<link rel="stylesheet" href="../styles/cards.css">
+		<link rel="stylesheet" href="../styles/animations.css">
+		<link rel="stylesheet" href="../styles/responsive.css">
+		<link rel="stylesheet" href="../styles/wiki.css">
+	</head>
+	<body class="page-load">
+		<header class="navbar">
+			<a class="logo" href="../index.html">Nat's Projects</a>
+			<nav>
+				<a href="../index.html">Home</a>
+				<a href="../index.html#projects">Projects</a>
+				<a href="../changelog.html">Changelog</a>
+				<a href="https://realisticnode.com/nat68" target="_blank">Server</a>
+				<a href="https://github.com/Nat688/Nat-Projects/issues" target="_blank">Report issues</a>
+			</nav>
+		</header>
+		<main>
+			<section class="wiki-header fade-up">
+				<h1>Speed Paths</h1>
+				<p>Gain a configurable Speed effect while walking on Dirt Paths, making roads faster and more rewarding to build.</p>
+			</section>
+			<section class="info-box fade-up">
+				<div class="info-item">
+					<strong>Type</strong>
+					Datapack / Mod
+				</div>
+				<div class="info-item">
+					<strong>Version</strong>
+					1.21.9 - 26.3
+				</div>
+				<div class="info-item">
+					<strong>Status</strong>
+					Released
+				</div>
+			</section>
+			<div class="wiki-content">
+				<section id="about" class="wiki-section fade-up">
+					<h2>About</h2>
+					<p>
+						Speed Paths is a datapack that grants players a configurable Speed effect whenever they walk on Dirt Path blocks, 
+						making roads a valuable part of survival gameplay.</p>
+					<p>
+						Whether you're connecting villages, your base or important locations, 
+						Speed Paths rewards players for building proper road networks by making travel significantly faster.
+					</p>
+					<p>
+						Everything is fully configurable through built-in commands, 
+						allowing you to choose the Speed level that best fits your world without editing any files.
+					</p>
+				</section>
+				<section id="features" class="wiki-section fade-up">
+					<h2>Features</h2>
+					<div class="feature">
+						<div class="feature-content">
+							<h3>Speed Boost</h3>
+							<p>Automatically gain a Speed effect while walking on Dirt Path blocks.</p>
+						</div>
+					</div>
+					<div class="feature">
+						<div class="feature-content">
+							<h3>Fully Configurable</h3>
+							<p>Choose any Speed level from I to V directly in-game.</p>
+						</div>
+					</div>
+					<div class="feature">
+						<div class="feature-content">
+							<h3>Vanilla Friendly</h3>
+							<p>Encourages road building without changing Minecraft's natural progression.</p>
+						</div>
+					</div>
+				</section>
+				<section id="showcase" class="wiki-section fade-up">
+					<h2>Showcase</h2>
+					<details class="recipe-group" open>
+					<summary>Screenshots</summary>
+					<div class="showcase-list">
+						<div class="showcase-item">
+							<img src="../images/speed-paths/menu_speed.png" alt="Speed Paths">
+							<h4>Menu Speed Paths</h4>
+							<p>/function speed_paths:menu_speed_path</p>
+						</div>
+						<div class="showcase-item">
+							<img src="../images/speed-paths/help_speed.png" alt="Speed Paths">
+							<h4>Help Speed Paths</h4>
+							<p>/function speed_paths:_help</p>
+							<p>/function speed_paths:help</p>
+						</div>
+						<div class="showcase-item">
+							<img src="../images/speed-paths/book_speed.png" alt="Speed Paths">
+							<h4>Book Speed Paths</h4>
+							<p>/function speed_paths:give_book</p>
+						</div>
+					</div>
+					</details>
+				</section>
+	      		<section id="commands" class="wiki-section fade-up">
+					<h2>Commands</h2>
+					<details class="recipe-group">
+						<summary>Speed Settings</summary>
+						<div class="command-list">
+							<div class="command-item">
+								<code class="copy-command">/function speed_paths:set_1</code>
+								<p>Sets the movement bonus to <b>Speed I</b>.</p>
+							</div>
+							<div class="command-item">
+								<code class="copy-command">/function speed_paths:set_2</code>
+								<p>Sets the movement bonus to <b>Speed II</b>.</p>
+							</div>
+							<div class="command-item">
+								<code class="copy-command">/function speed_paths:set_3</code>
+								<p>Sets the movement bonus to <b>Speed III</b>.</p>
+							</div>
+							<div class="command-item">
+								<code class="copy-command">/function speed_paths:set_4</code>
+					  			<p>Sets the movement bonus to <b>Speed IV</b>.</p>
+							</div>
+							<div class="command-item">
+								<code class="copy-command">/function speed_paths:set_5</code>
+								<p>Sets the movement bonus to <b>Speed V</b>.</p>
+							</div>
+						</div>
+					</details>
+					<details class="recipe-group">
+						<summary>Admin</summary>
+						<div class="command-list">
+							<div class="command-item">
+								<code class="copy-command">/function speed_paths:help</code>
+								<p>Displays every available command.</p>
+							</div>
+							<div class="command-item">
+								<code class="copy-command">/function speed_paths:menu_speed_path</code>
+								<p>Opens the configuration menu.</p>
+							</div>
+							<div class="command-item">
+								<code class="copy-command">/function speed_paths:give_book</code>
+								<p>Gives the Speed Paths configuration book.</p>
+							</div>
+							<div class="command-item">
+								<code class="copy-command">/function speed_paths:enable</code>
+								<p>Enables the datapack and opens the configuration menu.</p>
+							</div>
+							<div class="command-item">
+								<code class="copy-command">/function speed_paths:disable</code>
+								<p>Disables the Speed Paths effect.</p>
+							</div>
+							<div class="command-item">
+								<code class="copy-command">/function speed_paths:unset</code>
+								<p>Resets the current speed level.</p>
+							</div>
+						</div>
+					</details>
+				</section>
+				<section id="compatibility" class="wiki-section fade-up">
+					<h2>Compatibility</h2>
+					<table class="wiki-table">
+						<tr>
+							<th>Version</th>
+							<th>Status</th>
+						</tr>
+						<tr>
+							<td>1.16.x - 1.21.1</td>
+							<td>❌ Unsupported</td>
+						</tr>
+						<tr>
+							<td>1.21.2 - 1.21.8</td>
+							<td>🟠 Last supported version 3.2.0</td>
+						</tr>
+						<tr>
+							<td>1.21.9 - 26.3</td>
+							<td>✅ Supported</td>
+						</tr>
+						<tr>
+							<td>26.4 snapshots</td>
+							<td>✅ Supported</td>
+						</tr>
+					</table>
+				</section>
+				<section id="installation" class="wiki-section fade-up">
+					<h2>Installation</h2>
+					<p>
+						1. Download the datapack.<br/>
+						2. Place it inside your world's <b>datapacks</b> folder.<br/>
+						3. Run <b>/reload</b> or restart the world.<br/>
+						4. Have fun!
+					</p>
+					<br/>
+					<p>
+						1. Download the mod.<br/>
+						2. Place it inside your <b>mods</b> folder of your instance.<br/>
+						3. <b>Restart</b> your game.<br/>
+						4. Have fun!
+					</p>
+				</section>
+				<section id="faq" class="wiki-section fade-up">
+					<h2>FAQ</h2>
+					<details class="faq">
+						<summary>Can I change the speed level?</summary>
+						<p>Yes. You can choose any level between Speed I and Speed V using the built-in commands.</p>
+					</details>
+					<details class="faq">
+						<summary>Does it work on servers?</summary>
+						<p>Yes. Speed Paths works in both singleplayer and multiplayer worlds.</p>
+					</details>
+					<details class="faq">
+						<summary>Does it require a resource pack?</summary>
+						<p>No. The datapack works without any resource pack.</p>
+					</details>
+					<details class="faq">
+						<summary>Can I disable it?</summary>
+						<p>Yes. Simply use the disable command or reset the speed level whenever you want.</p>
+					</details>
+				</section>
 			</div>
-			<div class="info-item">
-				<strong>Version</strong>
-				1.21.9 - 26.3
-			</div>
-			<div class="info-item">
-				<strong>Status</strong>
-				Released
-			</div>
-		</section>
-
-		<div class="wiki-content">
-			<section id="about" class="wiki-section fade-up">
-				<h2>About</h2>
-				<p>
-					Speed Paths is a datapack that grants players a configurable Speed effect whenever they walk on Dirt Path blocks, 
-					making roads a valuable part of survival gameplay.</p>
-				<p>
-					Whether you're connecting villages, your base or important locations, 
-					Speed Paths rewards players for building proper road networks by making travel significantly faster.
-				</p>
-				<p>
-					Everything is fully configurable through built-in commands, 
-					allowing you to choose the Speed level that best fits your world without editing any files.
-				</p>
-			</section>
-
-			<section id="features" class="wiki-section fade-up">
-				<h2>Features</h2>
-				<div class="feature">
-					<div class="feature-content">
-						<h3>Speed Boost</h3>
-						<p>Automatically gain a Speed effect while walking on Dirt Path blocks.</p>
-					</div>
-				</div>
-				<div class="feature">
-					<div class="feature-content">
-						<h3>Fully Configurable</h3>
-						<p>Choose any Speed level from I to V directly in-game.</p>
-					</div>
-				</div>
-				<div class="feature">
-					<div class="feature-content">
-						<h3>Vanilla Friendly</h3>
-						<p>Encourages road building without changing Minecraft's natural progression.</p>
-					</div>
-				</div>
-			</section>
-
-			<section id="showcase" class="wiki-section fade-up">
-				<h2>Showcase</h2>
-				<details class="recipe-group" open>
-				<summary>Screenshots</summary>
-				<div class="showcase-list">
-					<div class="showcase-item">
-						<img src="../images/speed-paths/menu_speed.png" alt="Speed Paths">
-						<h4>Menu Speed Paths</h4>
-						<p>/function speed_paths:menu_speed_path</p>
-					</div>
-					<div class="showcase-item">
-						<img src="../images/speed-paths/help_speed.png" alt="Speed Paths">
-						<h4>Help Speed Paths</h4>
-						<p>/function speed_paths:_help</p>
-						<p>/function speed_paths:help</p>
-					</div>
-					<div class="showcase-item">
-						<img src="../images/speed-paths/book_speed.png" alt="Speed Paths">
-						<h4>Book Speed Paths</h4>
-						<p>/function speed_paths:give_book</p>
-					</div>
-				</div>
-				</details>
-			</section>
-			
-      		<section id="commands" class="wiki-section fade-up">
-				<h2>Commands</h2>
-				<details class="recipe-group">
-					<summary>Speed Settings</summary>
-					<div class="command-list">
-						<div class="command-item">
-							<code class="copy-command">/function speed_paths:set_1</code>
-							<p>Sets the movement bonus to <b>Speed I</b>.</p>
-						</div>
-						<div class="command-item">
-							<code class="copy-command">/function speed_paths:set_2</code>
-							<p>Sets the movement bonus to <b>Speed II</b>.</p>
-						</div>
-						<div class="command-item">
-							<code class="copy-command">/function speed_paths:set_3</code>
-							<p>Sets the movement bonus to <b>Speed III</b>.</p>
-						</div>
-						<div class="command-item">
-							<code class="copy-command">/function speed_paths:set_4</code>
-				  			<p>Sets the movement bonus to <b>Speed IV</b>.</p>
-						</div>
-						<div class="command-item">
-							<code class="copy-command">/function speed_paths:set_5</code>
-							<p>Sets the movement bonus to <b>Speed V</b>.</p>
-						</div>
-					</div>
-				</details>
-				<details class="recipe-group">
-					<summary>Admin</summary>
-					<div class="command-list">
-						<div class="command-item">
-							<code class="copy-command">/function speed_paths:help</code>
-							<p>Displays every available command.</p>
-						</div>
-						<div class="command-item">
-							<code class="copy-command">/function speed_paths:menu_speed_path</code>
-							<p>Opens the configuration menu.</p>
-						</div>
-						<div class="command-item">
-							<code class="copy-command">/function speed_paths:give_book</code>
-							<p>Gives the Speed Paths configuration book.</p>
-						</div>
-						<div class="command-item">
-							<code class="copy-command">/function speed_paths:enable</code>
-							<p>Enables the datapack and opens the configuration menu.</p>
-						</div>
-						<div class="command-item">
-							<code class="copy-command">/function speed_paths:disable</code>
-							<p>Disables the Speed Paths effect.</p>
-						</div>
-						<div class="command-item">
-							<code class="copy-command">/function speed_paths:unset</code>
-							<p>Resets the current speed level.</p>
-						</div>
-					</div>
-				</details>
-			</section>
-
-			<section id="compatibility" class="wiki-section fade-up">
-				<h2>Compatibility</h2>
-				<table class="wiki-table">
-					<tr>
-						<th>Version</th>
-						<th>Status</th>
-					</tr>
-					<tr>
-						<td>1.16.x - 1.21.1</td>
-						<td>❌ Unsupported</td>
-					</tr>
-					<tr>
-						<td>1.21.2 - 1.21.8</td>
-						<td>🟠 Last supported version 3.2.0</td>
-					</tr>
-					<tr>
-						<td>1.21.9 - 26.3</td>
-						<td>✅ Supported</td>
-					</tr>
-					<tr>
-						<td>26.4 snapshots</td>
-						<td>✅ Supported</td>
-					</tr>
-				</table>
-			</section>
-			
-			<section id="installation" class="wiki-section fade-up">
-				<h2>Installation</h2>
-				<p>
-					1. Download the datapack.<br/>
-					2. Place it inside your world's <b>datapacks</b> folder.<br/>
-					3. Run <b>/reload</b> or restart the world.<br/>
-					4. Have fun!
-				</p>
-				<br/>
-				<p>
-					1. Download the mod.<br/>
-					2. Place it inside your <b>mods</b> folder of your instance.<br/>
-					3. <b>Restart</b> your game.<br/>
-					4. Have fun!
-				</p>
-			</section>
-
-			<section id="faq" class="wiki-section fade-up">
-				<h2>FAQ</h2>
-				<details class="faq">
-					<summary>Can I change the speed level?</summary>
-					<p>Yes. You can choose any level between Speed I and Speed V using the built-in commands.</p>
-				</details>
-				<details class="faq">
-					<summary>Does it work on servers?</summary>
-					<p>Yes. Speed Paths works in both singleplayer and multiplayer worlds.</p>
-				</details>
-				<details class="faq">
-					<summary>Does it require a resource pack?</summary>
-					<p>No. The datapack works without any resource pack.</p>
-				</details>
-				<details class="faq">
-					<summary>Can I disable it?</summary>
-					<p>Yes. Simply use the disable command or reset the speed level whenever you want.</p>
-				</details>
-			</section>
-		</div>
-	</main>
-
-	<footer>
-		<p>© 2026 Nat's Projects</p>
-	</footer>
-	
-	<script src="../js/animations.js"></script>
-	<script src="../js/wiki.js"></script>
-	
-</body>
+		</main>
+		<footer>
+			<p>© 2026 Nat's Projects</p>
+		</footer>
+		<script src="../js/animations.js"></script>
+		<script src="../js/wiki.js"></script>
+	</body>
 </html>

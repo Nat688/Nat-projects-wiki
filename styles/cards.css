@@ -1,13 +1,8 @@
-/* ===== GRID ===== */
-
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
-
-/* ===== CARD ===== */
-
 .card {
     overflow: hidden;
     background: rgba(255,255,255,.04);
@@ -19,15 +14,11 @@
         border-color var(--transition),
         background var(--transition);
 }
-
 .card:hover {
     transform: translateY(-10px);
     background: rgba(255,255,255,.07);
     border-color: rgba(27,217,106,.45);
 }
-
-/* ===== IMAGE ===== */
-
 .card img {
     width: 100%;
     height: 220px;
@@ -35,17 +26,12 @@
     background: rgba(0,0,0,.35);
     transition: transform .4s ease;
 }
-
 .card:hover img {
     transform: scale(1.05);
 }
-
-/* ===== CONTENT ===== */
-
 .card-content {
     padding: 25px;
 }
-
 .card h3 {
     display: flex;
     align-items: center;
@@ -53,20 +39,15 @@
     margin-bottom: 15px;
     color: var(--text);
 }
-
 .card p {
     margin-bottom: 20px;
 }
-
-/* ===== BADGES ===== */
-
 .badges {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 25px;
 }
-
 .badge {
     display: inline-flex;
     align-items: center;
@@ -77,15 +58,11 @@
     color: var(--text-secondary);
     font-size: .85rem;
 }
-
 .badge.soon {
     background: rgba(255,170,0,.15);
     border-color: rgba(255,170,0,.4);
     color: #ffb300;
 }
-
-/* ===== BUTTON ===== */
-
 .card-button {
     display: block;
     width: 100%;
@@ -99,15 +76,11 @@
         transform var(--transition),
         background var(--transition);
 }
-
 .card-button:hover {
     transform: translateY(-3px);
     background: #35f083;
     color: black;
 }
-
-/* ===== SPECIAL CARDS ===== */
-
 .card.featured {
     border-color: rgba(27,217,106,.4);
 }
