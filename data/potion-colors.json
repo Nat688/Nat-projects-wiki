@@ -1,5 +1,4 @@
 {
-  "_comment": "Potion colours, copied as-is from Better Brewing's own recipe JSON (minecraft:potion_contents.custom_color). brewing.js fetches this file and applies each hex value to the matching bb-potion element.",
   "colors": {
     "absorption": {
       "custom_color_int": 16763955,
