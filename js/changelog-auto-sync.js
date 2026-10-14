@@ -1,8 +1,6 @@
 (() => {
 	"use strict";
-
 	const API_BASE = "https://api.modrinth.com/v2/project/";
-
 	function escapeHtml(str) {
 		return String(str)
 			.replace(/&/g, "&amp;")
@@ -10,12 +8,10 @@
 			.replace(/>/g, "&gt;")
 			.replace(/"/g, "&quot;");
 	}
-
 	function renderChangelog(raw) {
 		const lines = raw.replace(/\r\n/g, "\n").split("\n");
 		const htmlParts = [];
 		const listStack = [];
-
 		function closeDeeperThan(indent) {
 			while (listStack.length && listStack[listStack.length - 1].indent > indent) {
 				const level = listStack.pop();
@@ -29,11 +25,9 @@
 				}
 			}
 		}
-
 		function closeAllLists() {
 			closeDeeperThan(-1);
 		}
-
 		function inline(text) {
 			return escapeHtml(text)
 				.replace(/\*\*(.+?)\*\*/g, "<b>$1</b>")
@@ -42,18 +36,15 @@
 				.replace(/`([^`]+?)`/g, "<code>$1</code>")
 				.replace(/(?:^|[^*])\*([^*]+)\*(?!\*)/g, (m, p1) => m.replace(`*${p1}*`, `<i>${p1}</i>`));
 		}
-
 		lines.forEach(line => {
 			const trimmed = line.trim();
 			if (!trimmed) { closeAllLists(); return; }
-
 			const heading = trimmed.match(/^#{1,6}\s+(.*)$/);
 			if (heading) {
 				closeAllLists();
 				htmlParts.push(`<p><b>${inline(heading[1])}</b></p>`);
 				return;
 			}
-
 			const bulletMatch = line.match(/^(\s*)[-*+]\s+(.*)$/);
 			if (bulletMatch) {
 				const indent = bulletMatch[1].replace(/\t/g, "    ").length;
@@ -67,14 +58,12 @@
 				top.items.push(`<li>${inline(content)}</li>`);
 				return;
 			}
-
 			closeAllLists();
 			htmlParts.push(`<p>${inline(trimmed)}</p>`);
 		});
 		closeAllLists();
 		return htmlParts.join("");
 	}
-
 	function existingVersionNumbers(list, projectId) {
 		const known = new Set();
 		list.querySelectorAll(`.changelog-entry[data-project="${projectId}"]`).forEach(entry => {
@@ -87,7 +76,6 @@
 		});
 		return known;
 	}
-
 	function ensureFilterOption(source) {
 		const optgroups = document.querySelectorAll("#changelog-filter optgroup");
 		let projectGroup = null;
@@ -99,20 +87,16 @@
 		opt.textContent = source.badge;
 		projectGroup.appendChild(opt);
 	}
-
 	function statusOf(version) {
 		return ["release", "beta", "alpha"].includes(version.version_type) ? version.version_type : "release";
 	}
-
 	function displayVersion(versionNumber) {
 		return String(versionNumber).replace(/\+.*$/, "");
 	}
-
 	function isBig(source, version) {
 		const list = (window.CHANGELOG_BIG_VERSIONS && window.CHANGELOG_BIG_VERSIONS[source.id]) || [];
 		return list.includes(version.version_number);
 	}
-
 	function buildEntry(source, version) {
 		const article = document.createElement("article");
 		article.className = "changelog-entry";
@@ -121,9 +105,7 @@
 		const big = isBig(source, version);
 		article.dataset.big = big ? "true" : "false";
 		article.dataset.version = version.version_number;
-
 		const changelogText = (version.changelog || "").trim();
-
 		article.innerHTML = `
 			<div class="changelog-meta">
 				<time class="changelog-date" datetime="${escapeHtml(version.date_published || "")}"></time>
@@ -135,7 +117,6 @@
 		`;
 		return article;
 	}
-
 	async function syncSource(list, source) {
 		let versions;
 		try {
@@ -147,10 +128,8 @@
 			return 0;
 		}
 		if (!Array.isArray(versions) || versions.length === 0) return 0;
-
 		versions = versions.filter(v => Array.isArray(v.loaders) && v.loaders.some(l => String(l).toLowerCase() === "datapack"));
 		if (versions.length === 0) return 0;
-
 		const known = existingVersionNumbers(list, source.id);
 		let added = 0;
 		versions.forEach(version => {
@@ -163,19 +142,16 @@
 		if (added > 0) ensureFilterOption(source);
 		return added;
 	}
-
 	async function run() {
 		const list = document.getElementById("changelog-list");
 		const sources = window.CHANGELOG_SOURCES || [];
 		if (!list || sources.length === 0) return;
-
 		const results = await Promise.all(sources.map(source => syncSource(list, source)));
 		const totalAdded = results.reduce((a, b) => a + b, 0);
 		if (totalAdded > 0 && window.ChangelogUI) {
 			window.ChangelogUI.refresh();
 		}
 	}
-
 	if (document.readyState === "loading") {
 		document.addEventListener("DOMContentLoaded", run);
 	} else {
