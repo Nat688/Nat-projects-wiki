@@ -1,10 +1,7 @@
-/* ===== WIKI HEADER ===== */
-
 .wiki-header {
     text-align: center;
     padding: 80px 20px 50px;
 }
-
 .wiki-header h1 {
     background: linear-gradient(90deg,var(--green),var(--blue),var(--purple));
     background-clip: text;
@@ -12,15 +9,11 @@
     color: transparent;
     margin-bottom: 20px;
 }
-
 .wiki-header p {
     max-width: 800px;
     margin: auto;
     font-size: 1.2rem;
 }
-
-/* ===== WIKI IMAGE ===== */
-
 .wiki-image {
     width: min(900px,90%);
     margin: 40px auto;
@@ -29,14 +22,10 @@
     box-shadow: var(--shadow);
     overflow: hidden;
 }
-
 .wiki-image img {
     width: 100%;
     display: block;
 }
-
-/* ===== INFO BOX ===== */
-
 .info-box {
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
@@ -44,7 +33,6 @@
     margin: 40px auto;
     width: min(1000px,90%);
 }
-
 .info-item {
     padding: 20px;
     text-align: center;
@@ -52,36 +40,26 @@
     border: 1px solid var(--border);
     border-radius: var(--radius);
 }
-
 .info-item strong {
     display: block;
     margin-bottom: 8px;
     color: var(--green);
 }
-
-/* ===== WIKI CONTENT ===== */
-
 .wiki-content {
     width: min(1000px,90%);
     margin: auto;
 }
-
 .wiki-section {
     margin: 70px 0;
 }
-
 .wiki-section h2 {
     margin-bottom: 25px;
     padding-bottom: 10px;
     border-bottom: 1px solid var(--border);
 }
-
 .wiki-section h3 {
     margin: 30px 0 15px;
 }
-
-/* ===== FEATURES ===== */
-
 .feature {
     display: flex;
     align-items: center;
@@ -93,23 +71,17 @@
     border-radius: var(--radius);
     transition: transform var(--transition),background var(--transition);
 }
-
 .feature:hover {
     transform: translateY(-5px);
     background: rgba(255,255,255,.07);
 }
-
 .feature img {
     width: 150px;
     border-radius: 12px;
 }
-
 .feature-content {
     flex: 1;
 }
-
-/* ===== RECIPE GROUP ===== */
-
 .recipe-group {
 	margin: 20px 0;
 	background: rgba(255,255,255,.04);
@@ -117,7 +89,6 @@
 	border-radius: var(--radius);
 	overflow: hidden;
 }
-
 .recipe-group summary {
 	cursor: pointer;
 	padding: 18px 20px;
@@ -127,32 +98,24 @@
 	background: rgba(255,255,255,.05);
 	list-style: none;
 }
-
 .recipe-group summary:hover {
 	background: rgba(255,255,255,.08);
 }
-
 .recipe-group summary::before {
 	content: "▶ ";
 	color: var(--green);
 }
-
 .recipe-group[open] summary::before {
 	content: "▼ ";
 }
-
 .recipe-group .recipe-list {
 	padding: 25px;
 }
-
-/* ===== RECIPE LIST ===== */
-
 .recipe-list {
 	display: grid;
 	grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
 	gap: 25px;
 }
-
 .recipe-item {
 	padding: 20px;
 	background: rgba(255,255,255,.04);
@@ -160,12 +123,10 @@
 	border-radius: var(--radius);
 	transition: transform var(--transition),background var(--transition);
 }
-
 .recipe-item:hover {
 	transform: translateY(-5px);
 	background: rgba(255,255,255,.08);
 }
-
 .recipe-item img {
 	width: 80%;
 	max-width: 300px;
@@ -174,27 +135,21 @@
 	border-radius: 12px;
 	image-rendering: pixelated;
 }
-
 .recipe-item h4 {
 	margin-bottom: 10px;
 }
-
-/* ===== COMMANDS ===== */
-
 .command-list {
 	display: flex;
 	flex-direction: column;
 	gap: 15px;
 	padding: 20px;
 }
-
 .command-item {
 	padding: 20px;
 	background: rgba(255,255,255,.04);
 	border: 1px solid var(--border);
 	border-radius: var(--radius);
 }
-
 .command-item code {
 	display: inline-block;
 	padding: 8px 12px;
@@ -204,15 +159,11 @@
 	font-weight: bold;
 	margin-bottom: 10px;
 }
-
-/* ===== SHOWCASE ===== */
-
 .showcase-list {
 	display: grid;
 	grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
 	gap: 25px;
 }
-
 .showcase-item {
 	padding: 20px;
 	background: rgba(255,255,255,.04);
@@ -220,46 +171,35 @@
 	border-radius: var(--radius);
 	transition: transform var(--transition),background var(--transition);
 }
-
 .showcase-item:hover {
 	transform: translateY(-5px);
 	background: rgba(255,255,255,.08);
 }
-
 .showcase-item img {
 	width: 100%;
 	display: block;
 	border-radius: 12px;
 	margin-bottom: 15px;
 }
-
 .showcase-item h4 {
 	margin-bottom: 0;
 	text-align: center;
 }
-
-/* ===== TABLE ===== */
-
 .wiki-table {
     width: 100%;
     border-collapse: collapse;
     overflow: hidden;
     border-radius: var(--radius);
 }
-
 .wiki-table th {
     background: rgba(27,217,106,.2);
 }
-
 .wiki-table th,
 .wiki-table td {
     padding: 15px;
     text-align: left;
     border: 1px solid var(--border);
 }
-
-/* ===== FAQ ===== */
-
 .faq {
     background: rgba(255,255,255,.04);
     border: 1px solid var(--border);
@@ -267,18 +207,13 @@
     padding: 20px;
     margin: 15px 0;
 }
-
 .faq summary {
     cursor: pointer;
     font-weight: 700;
 }
-
 .faq p {
     margin-top: 15px;
 }
-
-/* ===== TAG ===== */
-
 .tag-new {
 	display: inline-block;
 	margin-left: 8px;
@@ -292,7 +227,6 @@
 	text-transform: uppercase;
 	animation: tag-pulse 2s infinite;
 }
-
 @keyframes tag-pulse {
 	0%,100% {
 		opacity: 1;
@@ -301,9 +235,6 @@
 		opacity: .65;
 	}
 }
-
-/* ===== COMMAND ===== */
-
 .command-item {
 	padding: 20px;
 	background: rgba(255,255,255,.04);
@@ -311,12 +242,10 @@
 	border-radius: var(--radius);
 	transition: background var(--transition),transform var(--transition);
 }
-
 .command-item:hover {
 	background: rgba(255,255,255,.07);
 	transform: translateY(-2px);
 }
-
 .command-item code {
 	display: inline-flex;
 	align-items: center;
@@ -330,41 +259,32 @@
 	user-select: all;
 	cursor: pointer;
 }
-
 .command-item code:hover {
 	background: rgba(27,217,106,.25);
 }
-
 .command-item p {
 	margin-top: 12px;
 	color: var(--text-secondary);
 }
-
-/* ===== SHOWCASE ===== */
-
 .showcase {
 	width: min(1200px,95%);
 	margin: 90px auto;
 }
-
 .showcase h2 {
 	font-size: 2.2rem;
 }
-
 .showcase p {
 	font-size: 1.15rem;
 	max-width: 900px;
 	margin: 0 auto 30px;
 	text-align: center;
 }
-
 .showcase .wiki-video {
 	width: 100%;
 	max-width: 1200px;
 	aspect-ratio: 16/9;
 	margin: 40px auto;
 }
-
 .showcase iframe {
 	width: 100%;
 	height: 100%;
@@ -372,9 +292,6 @@
 	border: 1px solid var(--border);
 	box-shadow: var(--shadow);
 }
-
-/* ===== MOBILE ===== */
-
 @media(max-width:700px) {
     .feature {
         flex-direction: column;
