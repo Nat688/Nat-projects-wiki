@@ -1,14 +1,6 @@
-/* =====================================
-   NAT'S PROJECTS - ANIMATIONS
-   ===================================== */
-
-
-/* ===== SCROLL REVEAL ===== */
-
 const animatedElements = document.querySelectorAll(
     ".fade-up, .fade-in, .fade-down"
 );
-
 const observer = new IntersectionObserver(
     entries => {
         entries.forEach(entry => {
@@ -26,16 +18,12 @@ const observer = new IntersectionObserver(
         threshold: .15
     }
 );
-
 animatedElements.forEach(element => {
     element.classList.remove(
         "visible"
     );
     observer.observe(element);
 });
-
-/* ===== PARALLAX BACKGROUND ===== */
-
 window.addEventListener(
     "scroll",
     () => {
