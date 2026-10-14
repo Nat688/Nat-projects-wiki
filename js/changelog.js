@@ -1,12 +1,9 @@
 (() => {
 	"use strict";
-
 	const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 	const STATUS_VALUES = ["alpha", "beta", "release"];
 	const FILTER_STORAGE_KEY = "changelog-filter-value";
-
 	const state = { list: null, filter: null, countEl: null, emptyEl: null, bound: false };
-
 	function restoreFilter() {
 		if (!state.filter) return;
 		let stored;
@@ -15,12 +12,10 @@
 		const optionExists = Array.from(state.filter.options).some(o => o.value === stored);
 		if (optionExists) state.filter.value = stored;
 	}
-
 	function saveFilter() {
 		if (!state.filter) return;
 		try { localStorage.setItem(FILTER_STORAGE_KEY, state.filter.value); } catch (e) {}
 	}
-
 	function localizeDates() {
 		document.querySelectorAll(".changelog-date").forEach(el => {
 			const iso = el.getAttribute("datetime");
@@ -41,7 +36,6 @@
 			el.textContent = `${month} ${day}, ${year} - ${hour}:${minutes} (${offsetLabel})`;
 		});
 	}
-
 	function sortEntries() {
 		if (!state.list) return;
 		const entries = Array.from(state.list.querySelectorAll(".changelog-entry"));
@@ -52,7 +46,6 @@
 		});
 		entries.forEach(entry => state.list.appendChild(entry));
 	}
-
 	function applyFilter() {
 		if (!state.list || !state.filter) return;
 		const value = state.filter.value;
@@ -76,19 +69,16 @@
 			state.emptyEl.hidden = visible !== 0;
 		}
 	}
-
 	function refresh() {
 		localizeDates();
 		sortEntries();
 		restoreFilter();
 		applyFilter();
 	}
-
 	function onFilterChange() {
 		saveFilter();
 		applyFilter();
 	}
-
 	function setup() {
 		state.list = document.getElementById("changelog-list");
 		state.filter = document.getElementById("changelog-filter");
@@ -101,9 +91,7 @@
 		}
 		refresh();
 	}
-
 	window.ChangelogUI = { refresh };
-
 	if (document.readyState === "loading") {
 		document.addEventListener("DOMContentLoaded", setup);
 	} else {
