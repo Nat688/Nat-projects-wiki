@@ -1,32 +1,24 @@
-/* ===== FADE ===== */
-
 .fade-in {
     opacity: 0;
 }
-
 .fade-in.visible {
     animation:
         fadeIn .8s ease forwards;
 }
-
 .fade-up {
     opacity: 0;
 }
-
 .fade-up.visible {
     animation:
         fadeUp .8s ease forwards;
 }
-
 .fade-down {
     opacity: 0;
 }
-
 .fade-down.visible {
     animation:
         fadeDown .8s ease forwards;
 }
-
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -35,7 +27,6 @@
         opacity: 1;
     }
 }
-
 @keyframes fadeUp {
     from {
         opacity: 0;
@@ -46,7 +37,6 @@
         transform: translateY(0);
     }
 }
-
 @keyframes fadeDown {
     from {
         opacity: 0;
@@ -57,32 +47,22 @@
         transform: translateY(0);
     }
 }
-
-/* ===== DELAY ===== */
-
 .delay-1 {
     animation-delay: .1s;
 }
-
 .delay-2 {
     animation-delay: .2s;
 }
-
 .delay-3 {
     animation-delay: .3s;
 }
-
 .delay-4 {
     animation-delay: .4s;
 }
-
-/* ===== FLOAT ===== */
-
 .float {
     animation:
         float 5s ease-in-out infinite;
 }
-
 @keyframes float {
     0%,
     100% {
@@ -92,14 +72,10 @@
         transform: translateY(-10px);
     }
 }
-
-/* ===== GLOW ANIMATION ===== */
-
 .glow {
     animation:
         glow 3s ease-in-out infinite;
 }
-
 @keyframes glow {
     0%,
     100% {
@@ -115,36 +91,26 @@
             );
     }
 }
-
-/* ===== HOVER EFFECTS ===== */
-
 .hover-up {
     transition:
         transform var(--transition);
 }
-
 .hover-up:hover {
     transform:
         translateY(-5px);
 }
-
 .hover-scale {
     transition:
         transform var(--transition);
 }
-
 .hover-scale:hover {
     transform:
         scale(1.03);
 }
-
-/* ===== PAGE LOAD ===== */
-
 .page-load {
     animation:
         pageLoad .6s ease;
 }
-
 @keyframes pageLoad {
     from {
         opacity: 0;
@@ -155,9 +121,6 @@
         transform: translateY(0);
     }
 }
-
-/* ===== REDUCE MOTION ===== */
-
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
