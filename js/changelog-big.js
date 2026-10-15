@@ -9,5 +9,5 @@ window.CHANGELOG_BIG_VERSIONS = {
 	"recycling": ["5.0.0", "4.0.0", "3.0.0", "2.0.0", "1.7.0", "1.5.0", "1.3.0", "1.0.0", "0.1.0"],
 	"speed-paths": ["3.0.0", "2.0.0"],
 	"villager-heal-golem": ["1.0.0snapshot-1"],
-	"villagers-tasks": ["1.0.0snapshot-2", "1.0.0snapshot-1"],
+	"villagers-tasks": ["2.0.0", "1.0.0snapshot-2", "1.0.0snapshot-1"],
 };
