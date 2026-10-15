@@ -26,9 +26,9 @@
 		</header>
 		<main>
 			<section class="wiki-header fade-up">
-		    	<h1>Villagers Tasks</h1>
-		    	<p>Enhance vanilla villagers by giving each profession a unique task that makes villages feel more alive and useful.</p>
-	    	</section>
+				<h1>Villagers Tasks</h1>
+				<p>Enhance vanilla villagers by giving each profession a unique task that makes villages feel more alive and useful.</p>
+			</section>
 			<section class="info-box fade-up">
 				<div class="info-item">
 					<strong>Type</strong>
@@ -47,15 +47,18 @@
 				<section id="about" class="wiki-section fade-up">
 					<h2>About</h2>
 					<p>
-						Villagers Jobs Tasks expands the behavior of existing vanilla villager professions by giving each one a practical task to perform automatically.
+						Villagers Tasks expands the behavior of existing vanilla villager professions by giving each one a practical task to perform automatically.
 					</p>
 					<p>
-						Instead of introducing new professions, 
+						Instead of introducing new professions,
 						the datapack enhances familiar villagers with abilities that make villages more dynamic and rewarding to build around.
 					</p>
 					<p>
-						Each profession contributes in its own way, from breeding animals and healing villagers to gathering resources or producing fish, 
-						while remaining balanced and vanilla-friendly.
+						Each profession contributes in its own way, from breeding animals and healing villagers to gathering resources, producing fish,
+						boosting defenders, repairing tools or crafting paper and maps, while remaining balanced and vanilla-friendly.
+					</p>
+					<p>
+						Every task has its own timer, range and limits, all listed below. Tasks run once per second, except the Weaponsmith which checks four times per second.
 					</p>
 				</section>
 				<section id="features" class="wiki-section fade-up">
@@ -63,47 +66,131 @@
 					<div class="feature">
 						<div class="feature-content">
 							<h3>🥩 Butcher</h3>
-							<p>Automatically culls excess livestock and leaves all vanilla drops on the ground.</p>
+							<p>Keeps livestock populations under control by culling the nearest adult animal when an area becomes overcrowded. Baby animals are ignored, and all vanilla drops are left on the ground.</p>
+							<p>
+								<b>Targets:</b> cows, pigs, sheep and chickens<br/>
+								<b>Radius:</b> 12 blocks<br/>
+								<b>Trigger:</b> more than 50 adult animals in range<br/>
+								<b>Timer:</b> one animal every 5 seconds
+							</p>
 						</div>
 					</div>
 					<div class="feature">
 						<div class="feature-content">
 							<h3>⛪ Cleric</h3>
 							<p>Heals injured villagers nearby to improve village survivability.</p>
+							<p>
+								<b>Radius:</b> 8 blocks around the cleric<br/>
+								<b>Trigger:</b> any other villager below full health<br/>
+								<b>Effect:</b> Regeneration II for 5 seconds<br/>
+								<b>Timer:</b> checked every second
+							</p>
 						</div>
 					</div>
 					<div class="feature">
 						<div class="feature-content">
 							<h3>🌾 Farmer</h3>
-							<p>Automatically breeds nearby adult animals.</p>
+							<p>Automatically breeds nearby adult animals, up to a population cap to prevent lag from endless mob growth. Baby animals are never bred but count toward the cap.</p>
+							<p>
+								<b>Targets:</b> cows, pigs, sheep and chickens<br/>
+								<b>Radius:</b> 12 blocks<br/>
+								<b>Max animals:</b> stops breeding at 40 animals (all ages) in range<br/>
+								<b>Effect:</b> up to 2 adults per species enter love mode for 30 seconds<br/>
+								<b>Timer:</b> every 20 seconds
+							</p>
 						</div>
 					</div>
 					<div class="feature">
 						<div class="feature-content">
 							<h3>🧱 Mason</h3>
-							<p>Generates weighted mining resources every 10 seconds.</p>
+							<p>Generates weighted mining resources and drops them at its feet, as if it had just mined them.</p>
+							<p>
+								<b>Timer:</b> every 10 seconds<br/>
+								<b>Drops:</b> Cobblestone 26%, Andesite / Granite / Diorite 16% each, Coal 10%, Raw Copper 7%, Raw Iron 5%, Raw Gold 3%, Diamond 1%
+							</p>
 						</div>
 					</div>
 					<div class="feature">
 						<div class="feature-content">
 							<h3>🎣 Fisherman</h3>
-							<p>Stores fish from the vanilla fishing loot table inside its barrel.</p>
+							<p>Stores fish from the vanilla fishing loot table inside its barrel. It never fishes while sleeping.</p>
+							<p>
+								<b>Timer:</b> every 30 seconds<br/>
+								<b>Barrel:</b> must be within 3 blocks of the fisherman<br/>
+								<b>Drops:</b> Cod 60%, Salmon 25%, Pufferfish 13%, Tropical Fish 2% (same odds as a player fishing, no junk or treasure)
+							</p>
 						</div>
 					</div>
 					<div class="feature">
 						<div class="feature-content">
 							<h3>🐑 Shepherd</h3>
-							<p>Shears nearby adult sheep every 60 seconds, drops matching colored wool, and keeps wild wolves away to protect the flock.</p>
+							<p>Shears nearby adult sheep, drops matching colored wool, and keeps wild wolves away to protect the flock.</p>
+							<p>
+								<b>Timer:</b> every 60 seconds<br/>
+								<b>Shearing:</b> adult sheep within 6 blocks that still have their wool, 1 wool of the sheep's color each<br/>
+								<b>Wolves:</b> untamed wolves within 8 blocks are pushed back 4 blocks (tamed wolves are ignored)
+							</p>
 						</div>
 					</div>
 					<div class="feature">
 						<div class="feature-content">
 							<h3>🤪 Nitwit</h3>
-							<p>Performs random useless animations every 15 seconds, including jumping, laughing, spinning, or playing music notes. Purely cosmetic.</p>
+							<p>Performs random useless animations, including jumping, laughing, spinning, or playing music notes. Purely cosmetic.</p>
+							<p>
+								<b>Timer:</b> every 15 seconds<br/>
+								<b>Animations:</b> one of 4, each with a 25% chance
+							</p>
+						</div>
+					</div>
+					<div class="feature">
+						<div class="feature-content">
+							<h3>⚔️ Weaponsmith</h3>
+							<p>Grants a brief Strength boost to nearby players and iron golems fighting zombies. Has a cooldown.</p>
+							<p>
+								<b>Radius:</b> 12 blocks around the weaponsmith<br/>
+								<b>Trigger:</b> a zombie, zombie villager, husk or drowned within 8 blocks of the player or golem<br/>
+								<b>Effect:</b> Strength I for 10 seconds<br/>
+								<b>Cooldown:</b> 15 seconds, only started when a boost is actually given<br/>
+								<b>Timer:</b> checked 4 times per second
+							</p>
+						</div>
+					</div>
+					<div class="feature">
+						<div class="feature-content">
+							<h3>🔨 Toolsmith</h3>
+							<p>Slowly repairs one damaged tool at a time in the inventories of nearby players. Has a cooldown.</p>
+							<p>
+								<b>Radius:</b> 12 blocks around the toolsmith<br/>
+								<b>Cooldown:</b> 30 seconds<br/>
+								<b>Effect:</b> restores 10% durability to the first damaged tool found in each player's inventory, then moves on to the next once it is fully repaired<br/>
+								<b>Tools:</b> pickaxes, axes, shovels and hoes (wood to netherite, plus copper), shears, fishing rods, flint and steel, brushes
+							</p>
+						</div>
+					</div>
+					<div class="feature">
+						<div class="feature-content">
+							<h3>📚 Librarian</h3>
+							<p>Once per day, at a random moment during work hours, drops glass, a name tag, or a level 1 enchanted book.</p>
+							<p>
+								<b>Frequency:</b> once per day, resets at dawn<br/>
+								<b>Work hours:</b> daytime 2000 to 9000, guaranteed before the end of work hours<br/>
+								<b>Drops:</b> one third chance each of Glass (2 to 4), Name Tag, or an Enchanted Book with a random level I enchantment
+							</p>
+						</div>
+					</div>
+					<div class="feature">
+						<div class="feature-content">
+							<h3>🗺️ Cartographer</h3>
+							<p>While working, produces paper, empty maps, or, occasionally, a compass.</p>
+							<p>
+								<b>Work hours:</b> daytime 2000 to 9000 (the timer only runs during work hours)<br/>
+								<b>Timer:</b> every 30 seconds of work<br/>
+								<b>Drops:</b> Paper 60% (1 to 3), Empty Map 34%, Compass 6%
+							</p>
 						</div>
 					</div>
 				</section>
-	      		<section id="commands" class="wiki-section fade-up">
+				<section id="commands" class="wiki-section fade-up">
 					<h2>Commands</h2>
 					<details class="recipe-group">
 						<summary>General</summary>
@@ -168,6 +255,18 @@
 					<details class="faq">
 						<summary>Can I use it with other villager datapacks or mods?</summary>
 						<p>In most cases yes, as long as they don't modify the same villager behaviors.</p>
+					</details>
+					<details class="faq">
+						<summary>Does it cause lag?</summary>
+						<p>No. Tasks run once per second (the Weaponsmith checks four times per second), and animal breeding is capped at 40 animals in range so farms cannot grow out of control.</p>
+					</details>
+					<details class="faq">
+						<summary>Do villagers walk to their workstation to do their task?</summary>
+						<p>No. The datapack does not control villager pathfinding. Tasks trigger wherever the villager stands, so blocks like the Fisherman's barrel must be within about 3 blocks of it.</p>
+					</details>
+					<details class="faq">
+						<summary>Are baby animals affected?</summary>
+						<p>The Butcher ignores them completely (they are neither counted nor culled). The Farmer only breeds adults, but baby animals still count toward its population cap.</p>
 					</details>
 				</section>
 			</div>
