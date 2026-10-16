@@ -105,6 +105,12 @@
 	font-size: .85em;
 	font-family: Consolas, monospace;
 }
+.changelog-entry blockquote {
+	margin: 10px 0;
+	padding: 4px 0 4px 14px;
+	border-left: 4px solid rgba(255,255,255,.2);
+	color: var(--text-secondary);
+}
 .changelog-hidden {
 	display: none !important;
 }
