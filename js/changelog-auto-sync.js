@@ -28,6 +28,13 @@
 		function closeAllLists() {
 			closeDeeperThan(-1);
 		}
+		let quoteLines = [];
+		function flushQuote() {
+			if (!quoteLines.length) return;
+			const body = quoteLines.map(l => inline(l)).join("<br>");
+			htmlParts.push(`<blockquote>${body}</blockquote>`);
+			quoteLines = [];
+		}
 		function inline(text) {
 			return escapeHtml(text)
 				.replace(/\*\*(.+?)\*\*/g, "<b>$1</b>")
@@ -38,6 +45,13 @@
 		}
 		lines.forEach(line => {
 			const trimmed = line.trim();
+			const quoteMatch = trimmed.match(/^>\s?(.*)$/);
+			if (quoteMatch) {
+				closeAllLists();
+				quoteLines.push(quoteMatch[1]);
+				return;
+			}
+			flushQuote();
 			if (!trimmed) { closeAllLists(); return; }
 			const heading = trimmed.match(/^#{1,6}\s+(.*)$/);
 			if (heading) {
@@ -61,6 +75,7 @@
 			closeAllLists();
 			htmlParts.push(`<p>${inline(trimmed)}</p>`);
 		});
+		flushQuote();
 		closeAllLists();
 		return htmlParts.join("");
 	}
