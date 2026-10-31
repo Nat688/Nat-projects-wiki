@@ -27,7 +27,7 @@
 		<main>
 			<section class="wiki-header fade-up">
 				<h1>Speed Paths</h1>
-				<p>Gain a configurable Speed effect while walking on Dirt Paths, making roads faster and more rewarding to build.</p>
+				<p>Gain a configurable Speed effect while walking on Dirt Paths and the blocks of your choice, making roads faster and more rewarding to build.</p>
 			</section>
 			<section class="info-box fade-up">
 				<div class="info-item">
@@ -52,10 +52,11 @@
 					<p>
 						Whether you're connecting villages, your base or important locations, 
 						Speed Paths rewards players for building proper road networks by making travel significantly faster.
+						Prefer gravel roads, sandstone streets or concrete highways? You can choose exactly which blocks give the boost.
 					</p>
 					<p>
-						Everything is fully configurable through built-in commands, 
-						allowing you to choose the Speed level that best fits your world without editing any files.
+						Everything is fully configurable through built-in commands, a chat menu and a dialog window, 
+						allowing you to choose the Speed level and the blocks that best fit your world without editing any files.
 					</p>
 				</section>
 				<section id="features" class="wiki-section fade-up">
@@ -63,13 +64,31 @@
 					<div class="feature">
 						<div class="feature-content">
 							<h3>Speed Boost</h3>
-							<p>Automatically gain a Speed effect while walking on Dirt Path blocks.</p>
+							<p>Automatically gain a Speed effect while walking on Dirt Path blocks or any other block you enable.</p>
+						</div>
+					</div>
+					<div class="feature">
+						<div class="feature-content">
+							<h3>Choose Your Blocks</h3>
+							<p>Pick which blocks give speed: Path, Gravel, Sand and Sandstone, Stairs, Packed Mud, Slabs, Planks, Stone, Concrete and Terracotta.</p>
+						</div>
+					</div>
+					<div class="feature">
+						<div class="feature-content">
+							<h3>Chat Menu and Dialog</h3>
+							<p>Configure the blocks from a clickable chat menu or from a dialog window with checkboxes that show the current state.</p>
+						</div>
+					</div>
+					<div class="feature">
+						<div class="feature-content">
+							<h3>Mount Support</h3>
+							<p>Riding a horse or any other mount? The mount receives the Speed boost while it runs over a fast block.</p>
 						</div>
 					</div>
 					<div class="feature">
 						<div class="feature-content">
 							<h3>Fully Configurable</h3>
-							<p>Choose any Speed level from I to V directly in-game.</p>
+							<p>Choose any Speed level from I to V directly in-game. New players start at Speed II.</p>
 						</div>
 					</div>
 					<div class="feature">
@@ -78,6 +97,70 @@
 							<p>Encourages road building without changing Minecraft's natural progression.</p>
 						</div>
 					</div>
+				</section>
+				<section id="blocks" class="wiki-section fade-up">
+					<h2>Blocks</h2>
+					<p>
+						Each option below can be turned on or off at any time. Only <b>Path</b> is enabled by default.
+						The block selection is <b>global</b> (it applies to every player), while the Speed level stays <b>per player</b>.
+					</p>
+					<table class="wiki-table">
+						<tr>
+							<th>Option</th>
+							<th>Blocks</th>
+							<th>Default</th>
+						</tr>
+						<tr>
+							<td>Path</td>
+							<td>Dirt Path</td>
+							<td>✅ On</td>
+						</tr>
+						<tr>
+							<td>Gravel</td>
+							<td>Gravel, Suspicious Gravel</td>
+							<td>❌ Off</td>
+						</tr>
+						<tr>
+							<td>Sand + Sandstone</td>
+							<td>Sand, Red Sand, Suspicious Sand, Sandstone, Smooth Sandstone, Cut Sandstone, Chiseled Sandstone and their red variants</td>
+							<td>❌ Off</td>
+						</tr>
+						<tr>
+							<td>Stairs (all)</td>
+							<td>Every stairs block</td>
+							<td>❌ Off</td>
+						</tr>
+						<tr>
+							<td>Packed Mud</td>
+							<td>Packed Mud, Mud Bricks</td>
+							<td>❌ Off</td>
+						</tr>
+						<tr>
+							<td>Slabs (all)</td>
+							<td>Every slab block</td>
+							<td>❌ Off</td>
+						</tr>
+						<tr>
+							<td>Planks</td>
+							<td>All planks, Bamboo Mosaic</td>
+							<td>❌ Off</td>
+						</tr>
+						<tr>
+							<td>Stone</td>
+							<td>Stone, Cobblestone, Smooth Stone, Stone Bricks, polished Andesite, Diorite and Granite, Deepslate variants, Bricks</td>
+							<td>❌ Off</td>
+						</tr>
+						<tr>
+							<td>Concrete</td>
+							<td>All 16 concrete colors</td>
+							<td>❌ Off</td>
+						</tr>
+						<tr>
+							<td>Terracotta</td>
+							<td>Terracotta and all 16 colored terracottas</td>
+							<td>❌ Off</td>
+						</tr>
+					</table>
 				</section>
 				<section id="showcase" class="wiki-section fade-up">
 					<h2>Showcase</h2>
@@ -127,6 +210,71 @@
 							<div class="command-item">
 								<code class="copy-command">/function speed_paths:set_5</code>
 								<p>Sets the movement bonus to <b>Speed V</b>.</p>
+							</div>
+						</div>
+					</details>
+					<details class="recipe-group">
+						<summary>Block Settings</summary>
+						<div class="command-list">
+							<div class="command-item">
+								<code class="copy-command">/function speed_paths:menu_blocks</code>
+								<p>Opens the block selection menu in the chat.</p>
+							</div>
+							<div class="command-item">
+								<code class="copy-command">/function speed_paths:dialog_blocks</code>
+								<p>Opens the block selection menu as a dialog window.</p>
+							</div>
+							<div class="command-item">
+								<code class="copy-command">/function speed_paths:blocks/toggle_path</code>
+								<p>Turns <b>Path</b> on or off.</p>
+							</div>
+							<div class="command-item">
+								<code class="copy-command">/function speed_paths:blocks/toggle_gravel</code>
+								<p>Turns <b>Gravel</b> on or off.</p>
+							</div>
+							<div class="command-item">
+								<code class="copy-command">/function speed_paths:blocks/toggle_sand</code>
+								<p>Turns <b>Sand + Sandstone</b> on or off.</p>
+							</div>
+							<div class="command-item">
+								<code class="copy-command">/function speed_paths:blocks/toggle_stairs</code>
+								<p>Turns <b>Stairs (all)</b> on or off.</p>
+							</div>
+							<div class="command-item">
+								<code class="copy-command">/function speed_paths:blocks/toggle_mud</code>
+								<p>Turns <b>Packed Mud</b> on or off.</p>
+							</div>
+							<div class="command-item">
+								<code class="copy-command">/function speed_paths:blocks/toggle_slabs</code>
+								<p>Turns <b>Slabs (all)</b> on or off.</p>
+							</div>
+							<div class="command-item">
+								<code class="copy-command">/function speed_paths:blocks/toggle_planks</code>
+								<p>Turns <b>Planks</b> on or off.</p>
+							</div>
+							<div class="command-item">
+								<code class="copy-command">/function speed_paths:blocks/toggle_stone</code>
+								<p>Turns <b>Stone</b> on or off.</p>
+							</div>
+							<div class="command-item">
+								<code class="copy-command">/function speed_paths:blocks/toggle_concrete</code>
+								<p>Turns <b>Concrete</b> on or off.</p>
+							</div>
+							<div class="command-item">
+								<code class="copy-command">/function speed_paths:blocks/toggle_terracotta</code>
+								<p>Turns <b>Terracotta</b> on or off.</p>
+							</div>
+							<div class="command-item">
+								<code class="copy-command">/function speed_paths:blocks/all_on</code>
+								<p>Enables every block option.</p>
+							</div>
+							<div class="command-item">
+								<code class="copy-command">/function speed_paths:blocks/all_off</code>
+								<p>Disables every block option.</p>
+							</div>
+							<div class="command-item">
+								<code class="copy-command">/function speed_paths:blocks/reset</code>
+								<p>Restores the default blocks (only <b>Path</b> enabled).</p>
 							</div>
 						</div>
 					</details>
@@ -205,7 +353,19 @@
 					<h2>FAQ</h2>
 					<details class="faq">
 						<summary>Can I change the speed level?</summary>
-						<p>Yes. You can choose any level between Speed I and Speed V using the built-in commands.</p>
+						<p>Yes. You can choose any level between Speed I and Speed V using the built-in commands. Each player starts at Speed II the first time, and a <b>/reload</b> never resets it.</p>
+					</details>
+					<details class="faq">
+						<summary>Which blocks give speed?</summary>
+						<p>Only Dirt Paths by default. You can enable Gravel, Sand and Sandstone, Stairs, Packed Mud, Slabs, Planks, Stone, Concrete and Terracotta from the block menu (<b>/function speed_paths:menu_blocks</b> or <b>/function speed_paths:dialog_blocks</b>).</p>
+					</details>
+					<details class="faq">
+						<summary>Is the block selection different for each player?</summary>
+						<p>No. The block selection is global and applies to everyone, while the Speed level is chosen by each player.</p>
+					</details>
+					<details class="faq">
+						<summary>Does it work when riding a horse?</summary>
+						<p>Yes. The mount you are riding receives the Speed boost while it runs over a fast block.</p>
 					</details>
 					<details class="faq">
 						<summary>Does it work on servers?</summary>
